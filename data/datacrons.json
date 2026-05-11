@@ -1,0 +1,1153 @@
+﻿{
+    "title":  "Datacrons",
+    "description":  "Permanent datacron collection guide grouped by galaxy region. Region pages support local screenshots through imagePath fields under data/images/datacrons.",
+    "lastVerified":  "2026-05-04",
+    "regions":  [
+                    {
+                        "name":  "Starter Worlds",
+                        "description":  "The fastest first sweep for new characters and legacy-wide stat unlocks.",
+                        "planets":  [
+                                        {
+                                            "name":  "Tython",
+                                            "faction":  "Republic",
+                                            "recommendedLevel":  "Starter",
+                                            "summary":  "Republic Jedi starter-world datacrons. Good first route for learning how the guide works.",
+                                            "imagePath":  "data/images/datacrons/Tython_DC.png",
+                                            "imageIncludesPins":  true,
+                                            "sourceUrl":  "https://www.ign.com/wikis/star-wars-the-old-republic/Datacron_Locations",
+                                            "datacrons":  [
+                                                              {
+                                                                  "name":  "Endurance Datacron",
+                                                                  "reward":  "+2 Endurance",
+                                                                  "area":  "Tythos River Valley",
+                                                                  "coordinates":  "X: -34, Y: -102",
+                                                                  "notes":  "Start southeast of Forward Camp Speeder, jump down to the river near X: -25, Y: -30, and follow the cave under the mountain.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "From the river valley, drop into the water south of the datacron area and follow the river north. Look for the cave opening around X: -29, Y: 14. Enter the cave and follow the short passage through to the datacron at the back."
+                                                              },
+                                                              {
+                                                                  "name":  "Mastery Datacron",
+                                                                  "reward":  "+2 Mastery",
+                                                                  "area":  "Upper Kaleth",
+                                                                  "coordinates":  "X: -641, Y: -71",
+                                                                  "notes":  "In the Ruins of Kaleth, climb the fallen column near X: -649, Y: 4 and follow the upper ledge north.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Head to the far northwest side of the Ruins of Kaleth and climb to the upper ruins. Find the large fallen column around X: -650, Y: 49 and run up it to reach the grassy ledge above. From the top, continue north along the ledge until the datacron comes into view."
+                                                              },
+                                                              {
+                                                                  "name":  "Blue Matrix Shard",
+                                                                  "reward":  "Matrix Shard",
+                                                                  "area":  "The Forge",
+                                                                  "coordinates":  "X: -91, Y: 920",
+                                                                  "notes":  "Near The Forge, look behind the ruined wall by Grand Chieftain Keshk and follow the hidden path to the shard.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Go toward The Forge Remnants and find the area where the paths converge. Move west toward the small opening in the wall near the Flesh Raiders. Follow the hidden grass path south, then east, until you reach the guarded shard at the end."
+                                                              }
+                                                          ]
+                                        },
+                                        {
+                                            "name":  "Ord Mantell",
+                                            "faction":  "Republic",
+                                            "recommendedLevel":  "Starter",
+                                            "summary":  "Republic Trooper and Smuggler starter-world datacrons.",
+                                            "imagePath":  "data/images/datacrons/Ord_Mantell_DC.png",
+                                            "imageIncludesPins":  true,
+                                            "sourceUrl":  "https://www.ign.com/wikis/star-wars-the-old-republic/Datacron_Locations",
+                                            "datacrons":  [
+                                                              {
+                                                                  "name":  "Red Matrix Shard",
+                                                                  "reward":  "Matrix Shard",
+                                                                  "area":  "Mannett Point",
+                                                                  "coordinates":  "X: 779, Y: 133",
+                                                                  "notes":  "On the northern beach at Mannett Point. Cross at the bridge and follow the beach past the elite enemy.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Travel to the northern beach at Mannett Point. The shard sits in a small beach hollow guarded by Captain Ethan Remak. If you are leveling through Ord Mantell, finish the nearby class/planet quests first or return around level 10 so the elite guard is easier to handle."
+                                                              },
+                                                              {
+                                                                  "name":  "Aim Datacron",
+                                                                  "reward":  "+2 Aim",
+                                                                  "area":  "Savrip Island",
+                                                                  "coordinates":  "X: -658, Y: -573",
+                                                                  "notes":  "On a visible ledge in the middle of Savrip Island.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Go to Savrip Island and start from the crashed ship area. Follow the dead grass and rock slope upward, jumping from ledge to ledge toward the peak. The datacron is at the top of the island, so keep climbing rather than circling the lower beach."
+                                                              },
+                                                              {
+                                                                  "name":  "Presence Datacron",
+                                                                  "reward":  "+2 Presence",
+                                                                  "area":  "Mount Avilatan",
+                                                                  "coordinates":  "X: -975, Y: 205",
+                                                                  "notes":  "Under a ledge near a small pond southwest of Volcano Camp.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Head west of the volcano toward the beach below Mount Avilatan. Look under the cliff/ledge near the small pond southwest of Volcano Camp. The datacron is tucked low against the terrain rather than on top of the mountain."
+                                                              }
+                                                          ]
+                                        },
+                                        {
+                                            "name":  "Korriban",
+                                            "faction":  "Empire",
+                                            "recommendedLevel":  "Starter",
+                                            "summary":  "Sith starter-world datacrons.",
+                                            "imagePath":  "data/images/datacrons/Korriban_DC.png",
+                                            "imageIncludesPins":  true,
+                                            "sourceUrl":  "https://www.ign.com/wikis/star-wars-the-old-republic/Datacron_Locations",
+                                            "datacrons":  [
+                                                              {
+                                                                  "name":  "Endurance Datacron",
+                                                                  "reward":  "+2 Endurance",
+                                                                  "area":  "Valley of the Dark Lords",
+                                                                  "coordinates":  "X: 150, Y: 82",
+                                                                  "notes":  "Just north of the shuttle pad, beside the wall near the shuttle platform.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "From the shuttle pad in the Valley of the Dark Lords, walk north along the wall near the shuttle platform. This datacron is out in the open beside the departure shuttle area and does not require platforming."
+                                                              },
+                                                              {
+                                                                  "name":  "Willpower Datacron",
+                                                                  "reward":  "+2 Willpower",
+                                                                  "area":  "Lower Wilds",
+                                                                  "coordinates":  "X: 529, Y: 64",
+                                                                  "notes":  "Visible from the taxi route; follow the path around the hill near the Lower Wilds taxi point.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "At the Lower Wilds taxi point, look across the nearby hill; the glow is visible as you leave the station. Run around the opposite side of the hill and climb the slope to reach the datacron."
+                                                              },
+                                                              {
+                                                                  "name":  "Red Matrix Shard",
+                                                                  "reward":  "Matrix Shard",
+                                                                  "area":  "Tomb of Tulak Hord / Ruin Atrium",
+                                                                  "coordinates":  "X: -42, Y: 382",
+                                                                  "notes":  "Inside the Tomb of Tulak Hord, near the heroic quest entrance area before the instances.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Enter the Tomb of Tulak Hord and go to the Ruin Atrium near the heroic quest area. The shard is close to the tomb entrance section, before the deeper class/heroic instances."
+                                                              }
+                                                          ]
+                                        },
+                                        {
+                                            "name":  "Hutta",
+                                            "faction":  "Empire",
+                                            "recommendedLevel":  "Starter",
+                                            "summary":  "Bounty Hunter and Imperial Agent starter-world datacrons.",
+                                            "imagePath":  "data/images/datacrons/Hutta_DC.png",
+                                            "imageIncludesPins":  true,
+                                            "sourceUrl":  "https://www.ign.com/wikis/star-wars-the-old-republic/Datacron_Locations",
+                                            "datacrons":  [
+                                                              {
+                                                                  "name":  "Aim Datacron",
+                                                                  "reward":  "+2 Aim",
+                                                                  "area":  "The Bog",
+                                                                  "coordinates":  "X: -96, Y: 861",
+                                                                  "notes":  "Climb the leaning pipe up the small hill and check under the tree branches.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "In The Bog, find the leaning pipe at the base of the small hill near X: -96, Y: 861. Walk up the pipe to reach the hilltop. If you do not see the datacron immediately, check under the nearby tree branches."
+                                                              },
+                                                              {
+                                                                  "name":  "Blue Matrix Shard",
+                                                                  "reward":  "Matrix Shard",
+                                                                  "area":  "Sewer Maintenance Tunnels",
+                                                                  "coordinates":  "X: -22, Y: 319",
+                                                                  "notes":  "Enter the sewer near X: -16, Y: 223. The shard is in the heroic sewer area.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Enter the Sewer Maintenance Tunnels near X: -16, Y: 223. Follow the sewer path into the heroic area toward X: -22, Y: 319. Bring help or return later if the elite enemies are still dangerous for your level."
+                                                              },
+                                                              {
+                                                                  "name":  "Presence Datacron",
+                                                                  "reward":  "+2 Presence",
+                                                                  "area":  "Eastern Rust Yards",
+                                                                  "coordinates":  "X: 497, Y: -13",
+                                                                  "notes":  "Follow the pipeline from the mainland near X: 506, Y: -18 to the northeast island.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Go to the far northeast island in the Eastern Rust Yards. Start on the mainland pipe around X: 506, Y: -18 and follow it out over the water. Stay on the pipeline until you can step onto the island with the datacron."
+                                                              }
+                                                          ]
+                                        }
+                                    ]
+                    },
+                    {
+                        "name":  "Capital Worlds",
+                        "description":  "Early faction capitals. These are useful to clear while leveling or doing class-story cleanup.",
+                        "planets":  [
+                                        {
+                                            "name":  "Coruscant",
+                                            "faction":  "Republic",
+                                            "recommendedLevel":  "Early game",
+                                            "summary":  "Republic capital datacrons, including several city-route traversal puzzles.",
+                                            "imagePath":  "data/images/datacrons/Coruscant_DC.png",
+                                            "imageIncludesPins":  true,
+                                            "sourceUrl":  "https://www.ign.com/wikis/star-wars-the-old-republic/Datacron_Locations",
+                                            "datacrons":  [
+                                                              {
+                                                                  "name":  "Presence Datacron",
+                                                                  "reward":  "+2 Presence",
+                                                                  "area":  "Old Galactic Market / Shipping and Receiving Docks",
+                                                                  "coordinates":  "X: 2318, Y: 1072",
+                                                                  "notes":  "Easy pickup near the first major quest hub after arriving on Coruscant.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "This datacron is near the first major quest hub in the Old Galactic Market. Head to the Shipping and Receiving Docks and look for the datacron in the open near the listed coordinates. Watch the nearby elite and guards if you are low level."
+                                                              },
+                                                              {
+                                                                  "name":  "Endurance Datacron",
+                                                                  "reward":  "+2 Endurance",
+                                                                  "area":  "Black Sun Territory",
+                                                                  "coordinates":  "X: -3626, Y: 151",
+                                                                  "notes":  "Start by climbing the barrels near X: -3773, Y: 133 and follow the pipe-and-billboard platforming route.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "In Black Sun Territory, start at the stack of boxes and barrels near X: -3773, Y: 133. Climb to the top, follow the ledge to the broken pipes, cross to the next ledge, then drop to the sign near the final platform. Use a running jump from the sign to reach the datacron."
+                                                              },
+                                                              {
+                                                                  "name":  "Mastery Datacron",
+                                                                  "reward":  "+2 Mastery",
+                                                                  "area":  "Justicar Territory / Shipping Docks",
+                                                                  "coordinates":  "X: 1022, Y: 3970",
+                                                                  "notes":  "Start on the stacked storage containers near X: 1034, Y: 3980 and cross the pipes toward the ledge.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "In Justicar Territory, climb the nearby boxes until you reach the pipe route. Cross the pipe toward the datacron platform. If you keep overshooting the pipe jumps, turn sprint off and use the small ledges where the pipes meet the wall."
+                                                              },
+                                                              {
+                                                                  "name":  "Mastery Datacron",
+                                                                  "reward":  "+2 Mastery",
+                                                                  "area":  "Jedi Temple",
+                                                                  "coordinates":  "X: -3087, Y: 3031",
+                                                                  "notes":  "Climb the fallen pillar in the Jedi Temple ruins, follow the upper rubble, and drop onto the datacron pillar.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Inside the Jedi Temple ruins, find the long fallen column in the northern open area. Climb it to the second level, turn around, and follow the upper edge toward the southwest side of the temple. Go around the elite enemy and drop to the small ledge leading to the datacron."
+                                                              },
+                                                              {
+                                                                  "name":  "Yellow Matrix Shard",
+                                                                  "reward":  "Matrix Shard",
+                                                                  "area":  "The Works / Pipeworks Passage",
+                                                                  "coordinates":  "X: 948, Y: 4540",
+                                                                  "notes":  "Start on the up-slanted pipe near X: 1172, Y: 4422 and stay on the pipe route through The Works.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "In The Works, start on the pipe route near X: 1172, Y: 4422. Climb the pipes and stay on the elevated path through the Pipeworks Passage. Keep following the pipe network until it brings you to the shard platform."
+                                                              }
+                                                          ]
+                                        },
+                                        {
+                                            "name":  "Dromund Kaas",
+                                            "faction":  "Empire",
+                                            "recommendedLevel":  "Early game",
+                                            "summary":  "Imperial capital datacrons. Several are simple travel goals; some need careful pathing.",
+                                            "imagePath":  "data/images/datacrons/Dromund_Kaas_DC.png",
+                                            "mapUrl":  "https://www.ign.com/maps/star-wars-the-old-republic/dromundkaas",
+                                            "sourceUrl":  "https://vulkk.com/2023/02/27/swtor-dromund-kaas-datacron-locations-guide/",
+                                            "datacrons":  [
+                                                              {
+                                                                  "name":  "Strength Datacron",
+                                                                  "reward":  "+2 Strength",
+                                                                  "area":  "Dromund Kaas Spaceport / Docking Bay D-61",
+                                                                  "coordinates":  "X: 855, Y: 643",
+                                                                  "notes":  "In Docking Bay D-61, climb the upper ramp and cross the metal beams above the hangar floor.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Go to Docking Bay D-61 in the Dromund Kaas spaceport. Climb to the upper walkway above the hangar floor, then move onto the metal beams that cross the room. Follow the beam path carefully over the open hangar until you can step onto the datacron platform."
+                                                              },
+                                                              {
+                                                                  "name":  "Presence Datacron",
+                                                                  "reward":  "+2 Presence",
+                                                                  "area":  "Kaas City",
+                                                                  "coordinates":  "X: 581, Y: 798",
+                                                                  "notes":  "In Kaas City, use the nearby raised path and rooftops to reach the datacron platform.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "In Kaas City, get above street level using the nearby ramped/raised path. Continue across the rooftops and narrow platforms toward the datacron ledge. The final approach is a short rooftop path, so slow down before the last drops and line up the platform edges."
+                                                              },
+                                                              {
+                                                                  "name":  "Cunning Datacron",
+                                                                  "reward":  "+2 Cunning",
+                                                                  "area":  "Mercenary Landing Site",
+                                                                  "coordinates":  "X: -1219, Y: 209",
+                                                                  "notes":  "At Mercenary Landing Site, approach from the cliff path above and drop carefully onto the ledge.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Travel to the Mercenary Landing Site and look for the cliff path above the datacron instead of trying to climb from below. Follow the upper ridge until you are over the ledge, then drop down carefully in stages. The datacron is on the ledge below the cliff route."
+                                                              },
+                                                              {
+                                                                  "name":  "Endurance Datacron",
+                                                                  "reward":  "+2 Endurance",
+                                                                  "area":  "Lord Grathan\u0027s Estate",
+                                                                  "coordinates":  "X: -795, Y: 1451",
+                                                                  "notes":  "At Lord Grathan\u0027s Estate, follow the northwest ridge path that begins near X: -694, Y: 1525.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Go to Lord Grathan\u0027s Estate and start on the northwest ridge path near X: -694, Y: 1525. Follow the ridge around the estate wall, staying high instead of dropping to the lower courtyard. Continue along the cliff until you reach the datacron overlook."
+                                                              },
+                                                              {
+                                                                  "name":  "Yellow Matrix Shard",
+                                                                  "reward":  "Matrix Shard",
+                                                                  "area":  "The Malignant Bog",
+                                                                  "coordinates":  "X: -187, Y: 1737",
+                                                                  "notes":  "In the Malignant Bog, start near X: -37, Y: 1697 and follow the southern path into the shard pocket.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "In the Malignant Bog, start near X: -37, Y: 1697 and move south into the hidden bog path. Follow the narrow route into the pocket where the shard is tucked away. Watch for hostile mobs in the swamp and keep the map open so you do not overshoot the side path."
+                                                              }
+                                                          ],
+                                            "imageIncludesPins":  true
+                                        }
+                                    ]
+                    },
+                    {
+                        "name":  "Coreward Worlds",
+                        "description":  "Shared and faction-route planets where datacron hunting starts to become more puzzle-heavy.",
+                        "planets":  [
+                                        {
+                                            "name":  "Taris",
+                                            "faction":  "Republic / Empire",
+                                            "recommendedLevel":  "Mid game",
+                                            "summary":  "Separate faction versions exist. Track Republic and Imperial routes independently.",
+                                            "imagePath":  "data/images/datacrons/Taris_DC.png",
+                                            "imageIncludesPins":  true,
+                                            "sourceUrl":  "https://www.ign.com/wikis/star-wars-the-old-republic/Datacron_Locations",
+                                            "datacrons":  [
+                                                              {
+                                                                  "name":  "Mastery Datacron",
+                                                                  "reward":  "+2 Mastery",
+                                                                  "area":  "Republic Resettlement / Municipal Utility District",
+                                                                  "coordinates":  "X: -1514, Y: -273",
+                                                                  "notes":  "Start near X: -1368, Y: -210 and follow the wall molding, exhaust pipe, and broken flooring route.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Start near X: -1368, Y: -210, close to the entrance for the Jedi Consular story mission. Find the narrow wall molding where it meets the ground and follow it along the wall. Continue past the first platforms until you can drop onto the large orange ship/exhaust cylinder. Cross it, drop to the smaller pipe on the far side, then continue to the broken floor section. Drop through the hole into the larger cylinder below and follow it to the datacron."
+                                                              },
+                                                              {
+                                                                  "name":  "Mastery Datacron",
+                                                                  "reward":  "+2 Mastery",
+                                                                  "area":  "Tularan Marsh / Derelict Swoop Tracks",
+                                                                  "coordinates":  "X: 1047, Y: 454",
+                                                                  "notes":  "Start at X: 1182, Y: 271, walk up the pipe, then follow the wall sections and girder catwalk.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Start at X: 1182, Y: 271 and climb the pipe. Drop down to the left onto the platform, then move onto the wall section. Follow the wall molding southwest and use the flat wall sections and girder catwalks to continue. Watch the gap around X: 876, Y: -184; move to the far-left corner for the jump. Stay right after the beam, climb the next flat surface, go left around the pillar, and the datacron is at the end."
+                                                              },
+                                                              {
+                                                                  "name":  "Green Matrix Shard",
+                                                                  "reward":  "Matrix Shard",
+                                                                  "area":  "Abandoned Power Plant",
+                                                                  "coordinates":  "X: 1059, Y: -175",
+                                                                  "notes":  "Two-player route inside the factory entered near X: 974, Y: 974; use the lower console to launch a player to the pipes.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "This is a two-player route inside the abandoned power plant/factory entered near X: 974, Y: 974. The player collecting the shard stands on the steam launcher while the second player activates the lower console. The launcher should throw the collector up to the pipes above. From there, follow the pipes and shelves carefully to the Green Matrix Shard. If the launch misses, reset at the console and try again."
+                                                              },
+                                                              {
+                                                                  "name":  "Mastery Datacron",
+                                                                  "reward":  "+2 Mastery",
+                                                                  "area":  "Transport Station 5 / Verdant Marshes",
+                                                                  "coordinates":  "X: 1186, Y: -575",
+                                                                  "notes":  "Enter the Transport Station 5 tube near X: 390, Y: 6 and use the shelf, pipe, and scaffolds in the square room.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Enter the Transport Station 5 tube near X: 390, Y: 6. Navigate to the large square room on the upper-right side of the area map. From the room entrance, move toward X: 1133, Y: -149 and look for the pipe at the edge of the shelf. Drop onto the pipe, walk to the end, jump to the scaffold, then continue from scaffold to scaffold and up the final ramp to the datacron."
+                                                              },
+                                                              {
+                                                                  "name":  "Mastery Datacron",
+                                                                  "reward":  "+2 Mastery",
+                                                                  "area":  "Dynamet General Hospital / Emergency Exit",
+                                                                  "coordinates":  "X: -363, Y: -228",
+                                                                  "notes":  "Republic-side route through Dynamet General Hospital Research Level; find the emergency exit behind crates.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Republic-only route. Enter Dynamet General Hospital Research Level from beneath the hospital ruins near X: -444, Y: -355. Follow the corridor until you reach the room with a ramp. Behind the ramp, jump over the crates to find the hidden Emergency Exit. Follow that emergency-exit corridor all the way through to the datacron. Imperial characters see an Imperial Agent phase at this entrance instead."
+                                                              },
+                                                              {
+                                                                  "name":  "Mastery Datacron",
+                                                                  "reward":  "+4 Mastery",
+                                                                  "area":  "Republic Mines / The Brell Sediment",
+                                                                  "coordinates":  "X: -643, Y: 1606",
+                                                                  "notes":  "Imperial-side route in the Abandoned Pirate Cave. Start near the forklift room and climb shelves, boxes, and pipes.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Imperial-side route in the Republic Mines on the second level of the Abandoned Pirate Cave. Enter near X: -750, Y: 1170 and reach the room with the bulldozer/forklift near the datacron. Start climbing on the track near the wall, then use the shelves, boxes, and pipes around the room perimeter. The jumps are tight; keep following the wall route until you can drop down to the datacron."
+                                                              }
+                                                          ]
+                                        },
+                                        {
+                                            "name":  "Balmorra",
+                                            "faction":  "Republic / Empire",
+                                            "recommendedLevel":  "Mid game",
+                                            "summary":  "Separate faction versions exist. Good candidate for faction filter support later.",
+                                            "imagePath":  "data/images/datacrons/Balmora_DC.png",
+                                            "sourceUrl":  "https://www.ign.com/wikis/star-wars-the-old-republic/Datacron_Locations",
+                                            "datacrons":  [
+                                                              {
+                                                                  "name":  "Endurance Datacron",
+                                                                  "reward":  "+3 Endurance",
+                                                                  "area":  "Bugtown / Colicoid Queen\u0027s Nest",
+                                                                  "coordinates":  "X: -446, Y: -292",
+                                                                  "notes":  "Republic route through the Colicoid Queen\u0027s Nest; find the maintenance tunnel gap from the queen room.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Republic route. Go to Bugtown and enter the Colicoid Queen\u0027s Nest heroic/maintenance tunnel area. Push past the queen room, then look to the left side for the hidden maintenance passage. Follow that side passage instead of leaving the nest; the datacron is tucked beyond it. Bring a companion or return later if the heroic enemies are still rough."
+                                                              },
+                                                              {
+                                                                  "name":  "Mastery Datacron",
+                                                                  "reward":  "+4 Mastery",
+                                                                  "area":  "Okara Droid Factory",
+                                                                  "coordinates":  "X: -1017, Y: 1514",
+                                                                  "notes":  "Republic route from the Assembly Line area; drop through the opening beneath the second assembly line.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Republic route. Enter the Okara Droid Factory in the Markaran Plains and take the west elevator down to the lower factory level. In the assembly-line room, move to the second assembly line and look below it for the drop shaft. Drop down from the south end, then follow the lower route to the datacron."
+                                                              },
+                                                              {
+                                                                  "name":  "Mastery Datacron",
+                                                                  "reward":  "+4 Mastery",
+                                                                  "area":  "Bugtown",
+                                                                  "coordinates":  "X: 192, Y: -341",
+                                                                  "notes":  "Republic route requiring the Lost Code Cylinder from Ba\u0027teil near X: 674, Y: 38.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Republic route. First get a Lost Code Cylinder from Ba\u0027teil near X: 674, Y: 38 east of the flashpoint shuttle area. Travel to the broken bridge north/northwest of Farnel Outpost in Bugtown. Use the cylinder on the locked datacron container; one cylinder can open it for a group for a short time."
+                                                              },
+                                                              {
+                                                                  "name":  "Presence Datacron",
+                                                                  "reward":  "+4 Presence",
+                                                                  "area":  "Gorinth Canyon",
+                                                                  "coordinates":  "X: 729, Y: 2027",
+                                                                  "notes":  "Republic route from Sundari Flatlands through Gorinth Canyon, climbing the hill behind the communications dish.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Republic route. Approach from Sundari Flatlands rather than trying to climb from directly below. Head southwest from Lower Sundari Outpost, cross the bridge, and move into the Imperial-held area. Go left behind the large satellite dish and follow the mountain path up, avoiding the elites and champion on the way."
+                                                              },
+                                                              {
+                                                                  "name":  "Mastery Datacron",
+                                                                  "reward":  "+4 Mastery",
+                                                                  "area":  "Gorinth Canyon",
+                                                                  "coordinates":  "X: -779, Y: 2070",
+                                                                  "notes":  "Republic route from Lower Markaran Outpost; take the pipe beside the destroyed bridge and drop down to the datacron.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Republic route. Leave Lower Markaran Outpost on the south road and look for the pipe crossing the canyon around X: -660, Y: 1837. Cross the pipe between the first bridge and the broken anti-air gun. On the far side, follow the left path and look down for the datacron below."
+                                                              },
+                                                              {
+                                                                  "name":  "Aim Datacron",
+                                                                  "reward":  "+2 Aim",
+                                                                  "area":  "Okara Droid Factory",
+                                                                  "coordinates":  "X: -1017, Y: 1514",
+                                                                  "notes":  "Empire route in the Assembly Line level; drop to the long pipe under the second assembly line.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Empire route. Enter the Okara Droid Factory and reach the Assembly Line level. Move to the second assembly line and locate the long pipe/drop route beneath it. Drop carefully onto the pipe and follow the lower factory route until you reach the datacron platform."
+                                                              },
+                                                              {
+                                                                  "name":  "Cunning Datacron",
+                                                                  "reward":  "+2 Cunning",
+                                                                  "area":  "Balmorran Arms Factory",
+                                                                  "coordinates":  "X: 1853, Y: 111",
+                                                                  "notes":  "Empire route beneath the dock in the Balmorran Arms Factory area.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Empire route. Approach through the Balmorran Arms Factory and continue into the Power Center section. Work through the second level, exit into the exterior power-center area, then head to the eastern end of the map. The datacron sits on the rocky outcropping beneath the northern pier."
+                                                              },
+                                                              {
+                                                                  "name":  "Green Matrix Shard",
+                                                                  "reward":  "Matrix Shard",
+                                                                  "area":  "Neebray Warehouse",
+                                                                  "coordinates":  "X: -505, Y: 1990",
+                                                                  "notes":  "Empire two-player route; activate two security stations at the same time to drop the force field.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Empire two-player route. Enter Neebray Warehouse in Gorinth Canyon and use the elevator on the south side to reach the lower level. The shard is behind a force field. Put one player at each console on opposite sides of the room and activate both at the same time to drop the field."
+                                                              },
+                                                              {
+                                                                  "name":  "Strength Datacron",
+                                                                  "reward":  "+2 Strength",
+                                                                  "area":  "Gorinth Canyon / Outpost Victory",
+                                                                  "coordinates":  "X: 727, Y: 2033",
+                                                                  "notes":  "Empire route in the southeast of Gorinth Canyon near Outpost Victory.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Empire route. From Outpost Victory, take the path leading south/southeast just east of the outpost. Follow it all the way to the end, then work through the rocks rather than turning back at the apparent dead end. The datacron is hidden at the end of that rocky route."
+                                                              },
+                                                              {
+                                                                  "name":  "Willpower Datacron",
+                                                                  "reward":  "+2 Willpower",
+                                                                  "area":  "Farnel Research Facility",
+                                                                  "coordinates":  "X: 191, Y: -346",
+                                                                  "notes":  "Empire route requiring a Lost Code Cylinder from the junk dealer near X: 675, Y: 34.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Empire route. Travel to the Farnel Research Facility from the Vanguard Outpost skyhopper in the Markaran Plains. Buy or loot a Lost Code Cylinder from Ba\u0027teil the junk dealer near X: 674, Y: 35. Go to the locked chest on the broken bridge north of Bugtown and use the cylinder to open it."
+                                                              }
+                                                          ],
+                                            "imageIncludesPins":  true
+                                        },
+                                        {
+                                            "name":  "Quesh",
+                                            "faction":  "Both",
+                                            "recommendedLevel":  "Mid game",
+                                            "summary":  "Small planet, quick datacron cleanup.",
+                                            "imagePath":  "data/images/datacrons/Quesh_DC.png",
+                                            "imageIncludesPins":  true,
+                                            "sourceUrl":  "https://www.ign.com/wikis/star-wars-the-old-republic/Datacron_Locations",
+                                            "datacrons":  [
+                                                              {
+                                                                  "name":  "Cunning Datacron",
+                                                                  "reward":  "+4 Cunning",
+                                                                  "area":  "Republic Mining Camp",
+                                                                  "coordinates":  "X: 426, Y: -130",
+                                                                  "notes":  "Reach the fenced hill area by following the pipe-and-wall route or the alternate path around the buildings.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Go to the Republic Mining Camp and look for the fenced hill near the listed coordinates. The normal approach is not straight up the hill; follow the pipe-and-wall route around the buildings until you can get onto the raised terrain. Stay on the upper edge and work around to the datacron side of the fence."
+                                                              },
+                                                              {
+                                                                  "name":  "Endurance Datacron",
+                                                                  "reward":  "+4 Endurance",
+                                                                  "area":  "Quesh Imperial Outpost",
+                                                                  "coordinates":  "X: 207, Y: 769",
+                                                                  "notes":  "Two-player cave route. Coordinate the outside console and the room panels to clear the gas and force fields.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Two-player route. Enter the cave near the Imperial outpost and coordinate the outside console with the panels inside the room. One player handles the external control while the other moves through the gas/force-field sequence. Clear each barrier in order, then collect the datacron once the final field is open."
+                                                              },
+                                                              {
+                                                                  "name":  "Strength Datacron",
+                                                                  "reward":  "+4 Strength",
+                                                                  "area":  "Three Families War Camp",
+                                                                  "coordinates":  "X: 558, Y: 1422",
+                                                                  "notes":  "From Broga\u0027s Palace grounds, follow the wall west and north, then pass through the rocks to the hill.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Start near Broga\u0027s Palace grounds and move toward the Three Families War Camp. Follow the wall west and then north, staying against the terrain instead of entering the camp center. Look for the pass-through in the rocks that leads up onto the hill with the datacron."
+                                                              }
+                                                          ]
+                                        }
+                                    ]
+                    },
+                    {
+                        "name":  "Hutt Space",
+                        "description":  "Classic shared planets with many of the most useful legacy stat unlocks.",
+                        "planets":  [
+                                        {
+                                            "name":  "Nar Shaddaa",
+                                            "faction":  "Both",
+                                            "recommendedLevel":  "Mid game",
+                                            "summary":  "Large vertical city planet with several travel and jumping routes.",
+                                            "imagePath":  "data/images/datacrons/Nar_Shaddaa_DC.png",
+                                            "imageIncludesPins":  true,
+                                            "sourceUrl":  "https://www.ign.com/wikis/star-wars-the-old-republic/Datacron_Locations",
+                                            "datacrons":  [
+                                                              {
+                                                                  "name":  "Presence Datacron",
+                                                                  "reward":  "+3 Presence",
+                                                                  "area":  "Red Light District / Catwalks",
+                                                                  "coordinates":  "X: 3341, Y: -3285",
+                                                                  "notes":  "Republic route via the Gauntlet Gang Area elevator, awnings, and catwalk platform.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Republic route. Use the elevator into the Gauntlet Gang Area and climb onto the awnings/catwalks above the street. Follow the upper catwalk path carefully from platform to platform. The datacron is on the elevated Red Light District route, so stay high and avoid dropping back to street level."
+                                                              },
+                                                              {
+                                                                  "name":  "Mastery Datacron",
+                                                                  "reward":  "+3 Mastery",
+                                                                  "area":  "Nikto Sector / Swoop Bike Drag",
+                                                                  "coordinates":  "X: -3360, Y: -3314",
+                                                                  "notes":  "Republic route from the northeast crates; climb containers, awnings, support cables, pipes, and the sign.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Republic route. Start near the northeast crates in the Nikto Sector. Climb the containers, then move across awnings, support cables, and pipes toward the Swoop Bike Drag area. The route uses several narrow sign and pipe jumps; turn off sprint if you keep overshooting."
+                                                              },
+                                                              {
+                                                                  "name":  "Mastery Datacron",
+                                                                  "reward":  "+3 Mastery",
+                                                                  "area":  "Shadow Town / Access Tunnels",
+                                                                  "coordinates":  "X: 2157, Y: 3103",
+                                                                  "notes":  "Republic route through Shadow Town boxes, beams, wall pipes, lights, and elevator to the access tunnels.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Republic route. In Shadow Town, begin by climbing the boxes and beams that lead above the normal floor. Follow the wall pipes and light fixtures to the elevator route, then ride up into the access tunnels. Continue through the tunnel path until it brings you out by the datacron."
+                                                              },
+                                                              {
+                                                                  "name":  "Aim Datacron",
+                                                                  "reward":  "+3 Aim",
+                                                                  "area":  "Corellian Sector",
+                                                                  "coordinates":  "X: -3791, Y: -1668",
+                                                                  "notes":  "Empire route. Climb to the roof shelves and ride the floating advertisement projector to the platform.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Empire route. In the Corellian Sector, climb from the roof shelving up to the billboard/projector path. Wait for the floating advertisement projector and ride it across to the datacron platform. Do not jump off early; line up with the destination platform before stepping down."
+                                                              },
+                                                              {
+                                                                  "name":  "Strength Datacron",
+                                                                  "reward":  "+3 Strength",
+                                                                  "area":  "Network Access / Taxi",
+                                                                  "coordinates":  "X: 2018, Y: 2441",
+                                                                  "notes":  "Empire route. Drop to the unreachable blue taxi platform below the taxi station and use the taxi.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Empire route. Go to the taxi station in Network Access and look below for the unreachable blue taxi platform. Drop down carefully onto that platform, then use the special taxi from there. It carries you to the route that reaches the Strength datacron."
+                                                              },
+                                                              {
+                                                                  "name":  "Presence Datacron",
+                                                                  "reward":  "+3 Presence",
+                                                                  "area":  "Red Light Sector / Catwalks",
+                                                                  "coordinates":  "X: 1595, Y: -2671",
+                                                                  "notes":  "Empire route via nearby boxes, beams, awnings, elevator, and wall pipes.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Empire route. Start from the nearby boxes in the Red Light Sector and climb up to the beams. Move from beams to awnings, then use the elevator and wall pipes to stay above the street. Follow the catwalk path to the datacron platform."
+                                                              },
+                                                              {
+                                                                  "name":  "Mastery Datacron",
+                                                                  "reward":  "+3 Mastery",
+                                                                  "area":  "High Security Lockdown / Incinerator Room",
+                                                                  "coordinates":  "X: 1958, Y: 3288",
+                                                                  "notes":  "Both-faction route. Enter the Incinerator Room and use code 326:3827; also collect the Slot Decoder.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Both factions. Enter High Security Lockdown and find the Incinerator Room. Use the code 326:3827 to survive/open the sequence, then collect the datacron. While you are there, make sure to pick up the Slot Decoder because it is needed for the Yellow Matrix Shard route."
+                                                              },
+                                                              {
+                                                                  "name":  "Yellow Matrix Shard",
+                                                                  "reward":  "Matrix Shard",
+                                                                  "area":  "Network Security District / Maintenance Terrace",
+                                                                  "coordinates":  "X: 1784, Y: 3091",
+                                                                  "notes":  "Both-faction route requiring the Slot Decoder from the Incinerator Room datacron.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Both factions. Do the High Security Lockdown/Incinerator Room datacron first and collect the Slot Decoder. Take the decoder to the Network Security District maintenance route. Use it at the shard machine/slot access point, then continue onto the Maintenance Terrace to claim the shard."
+                                                              }
+                                                          ]
+                                        },
+                                        {
+                                            "name":  "Tatooine",
+                                            "faction":  "Both",
+                                            "recommendedLevel":  "Mid game",
+                                            "summary":  "Classic datacron planet with travel time and route planning.",
+                                            "imagePath":  "data/images/datacrons/Tatooine_DC.png",
+                                            "imageIncludesPins":  true,
+                                            "sourceUrl":  "https://www.ign.com/wikis/star-wars-the-old-republic/Datacron_Locations",
+                                            "datacrons":  [
+                                                              {
+                                                                  "name":  "Cunning Datacron",
+                                                                  "reward":  "+3 Cunning",
+                                                                  "area":  "Anchorhead",
+                                                                  "coordinates":  "X: 2140, Y: -3671",
+                                                                  "notes":  "Republic-only datacron in Anchorhead.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Republic-only. Go to Anchorhead and use the city route to reach the datacron at X: 2140, Y: -3671. This one is a local faction-city pickup, so Imperial characters should use the Mos Ila version instead."
+                                                              },
+                                                              {
+                                                                  "name":  "Cunning Datacron",
+                                                                  "reward":  "+3 Cunning",
+                                                                  "area":  "Mos Ila",
+                                                                  "coordinates":  "X: 726, Y: 3133",
+                                                                  "notes":  "Empire-only datacron in Mos Ila.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Empire-only. Go to Mos Ila and use the city route to reach the datacron at X: 726, Y: 3133. This mirrors the Republic Anchorhead datacron; Republic characters should use the Anchorhead version instead."
+                                                              },
+                                                              {
+                                                                  "name":  "Willpower Datacron",
+                                                                  "reward":  "+3 Willpower",
+                                                                  "area":  "Jundland",
+                                                                  "coordinates":  "X: 1966, Y: -643",
+                                                                  "notes":  "Find the cave entrance in the cliff face behind the datacron when facing it from the ground.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Travel to Jundland east of Ridgeside Camp and approach the cliff that overlooks the datacron area. From the canyon edge, look for the ledge jutting out from the wall. Drop to that ledge, enter the tunnel, and follow it through until you reach the datacron."
+                                                              },
+                                                              {
+                                                                  "name":  "Aim Datacron",
+                                                                  "reward":  "+3 Aim",
+                                                                  "area":  "The Dune Sea",
+                                                                  "coordinates":  "X: -621, Y: -24",
+                                                                  "notes":  "Shared-faction datacron in The Dune Sea.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Go to the Black Box quest area northwest of Mos Anek and head to the western cliff edge. Look over the edge for part of a downed shuttle engine wedged into the cliff. Drop onto the shuttle piece and follow it to the datacron. Be careful if your route crosses high-level Empire NPCs or the PvP canyon."
+                                                              },
+                                                              {
+                                                                  "name":  "Blue Matrix Shard and Strength Datacron",
+                                                                  "reward":  "Matrix Shard / +3 Strength",
+                                                                  "area":  "The Dune Sea",
+                                                                  "coordinates":  "X: -2391, Y: -1381",
+                                                                  "notes":  "Ride the Jawa Balloon from the south platform near X: -2338, Y: -8; expect a long wait and ride.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Go to the Jawa Balloon platform in the Dune Sea around X: -2338, Y: -8. Wait for the balloon, ride it across the desert, and do not jump until it reaches the sandcrawler/platform route. Collect the Blue Matrix Shard and Strength datacron from the sandcrawler area. Expect a long wait and ride."
+                                                              }
+                                                          ]
+                                        },
+                                        {
+                                            "name":  "Voss",
+                                            "faction":  "Both",
+                                            "recommendedLevel":  "Late class story",
+                                            "summary":  "Five-datacron planet with several route-specific steps.",
+                                            "imagePath":  "data/images/datacrons/Voss_DC.png",
+                                            "imageIncludesPins":  true,
+                                            "sourceUrl":  "https://www.ign.com/wikis/star-wars-the-old-republic/Datacron_Locations",
+                                            "datacrons":  [
+                                                              {
+                                                                  "name":  "Mastery Datacron",
+                                                                  "reward":  "+4 Mastery",
+                                                                  "area":  "The Old Paths",
+                                                                  "coordinates":  "X: -29, Y: 373",
+                                                                  "notes":  "Start from X: -606, Y: 310, climb the rocks near X: -433, Y: 183, and continue toward the cave.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Start around X: -606, Y: 310 and move toward the rocks near X: -433, Y: 183. Climb the rock path up into The Old Paths route and keep following the ledges toward the cave. The datacron is reached by staying on the elevated rock path rather than trying to approach from below."
+                                                              },
+                                                              {
+                                                                  "name":  "Endurance Datacron",
+                                                                  "reward":  "+4 Endurance",
+                                                                  "area":  "Shrine of Healing / Lower Level",
+                                                                  "coordinates":  "X: -1950, Y: -940",
+                                                                  "notes":  "Requires completion of The Trials quest chain before accessing the shrine route.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Complete the required Voss Trials quest chain before attempting this datacron; the shrine route is blocked until then. Once eligible, enter the Shrine of Healing and work down to the lower level. Follow the interior shrine path to the datacron chamber."
+                                                              },
+                                                              {
+                                                                  "name":  "Strength Datacron",
+                                                                  "reward":  "+4 Strength",
+                                                                  "area":  "The Gormak Lands",
+                                                                  "coordinates":  "X: 580, Y: 210",
+                                                                  "notes":  "Use the tunnel entrance near cursor X: 586, Y: 1927 after starting near cursor X: 382, Y: 1906.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Start near the Gormak Lands route around cursor X: 382, Y: 1906 and move toward the tunnel entrance near X: 586, Y: 1927. Enter the tunnel and follow it through the mountain path. The datacron is reached from inside this tunnel route, not from the exterior marker directly."
+                                                              },
+                                                              {
+                                                                  "name":  "Presence Datacron",
+                                                                  "reward":  "+4 Presence",
+                                                                  "area":  "Voss Mystic Cave",
+                                                                  "coordinates":  "X: 2000, Y: -940",
+                                                                  "notes":  "Meditate at the tablet at X: 2000, Y: -940 to be moved to the cave with the datacron.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Go to the tablet at X: 2000, Y: -940 and meditate/interact with it. The interaction moves you to the Voss Mystic Cave area containing the datacron. Once inside, follow the cave path to the datacron and exit normally afterward."
+                                                              },
+                                                              {
+                                                                  "name":  "Mastery Datacron",
+                                                                  "reward":  "+4 Mastery",
+                                                                  "area":  "Boneyard",
+                                                                  "coordinates":  "X: 725, Y: 373",
+                                                                  "notes":  "Retrieve shield codes from the fallen trooper near the Republic walker by the elevator, then use them for the Boneyard datacron.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "First retrieve the shield codes from the fallen trooper near the Republic walker by the elevator. Take those codes to the Boneyard datacron area and use them to bypass the shield/access blocker. Once the shield is handled, move into the datacron pocket and collect it."
+                                                              }
+                                                          ]
+                                        }
+                                    ]
+                    },
+                    {
+                        "name":  "Outer Rim \u0026 Warzones",
+                        "description":  "Larger planets and later classic routes. Some entries are time-consuming or puzzle-heavy.",
+                        "planets":  [
+                                        {
+                                            "name":  "Alderaan",
+                                            "faction":  "Both",
+                                            "recommendedLevel":  "Mid game",
+                                            "summary":  "Large travel planet. Good to clear when you already have quick travel points.",
+                                            "imagePath":  "data/images/datacrons/Alderaan_DC.png",
+                                            "sourceUrl":  "https://www.ign.com/wikis/star-wars-the-old-republic/Datacron_Locations",
+                                            "datacrons":  [
+                                                              {
+                                                                  "name":  "Aim Datacron",
+                                                                  "reward":  "+4 Aim",
+                                                                  "area":  "The Juran Mountains",
+                                                                  "coordinates":  "X: 1107, Y: 80",
+                                                                  "notes":  "Ride the damaged lift near X: 1085, Y: 2 down to the small island.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Start near Organa Medical Camp and cross the bridge to find the snowy path around X: 1161, Y: 230. Follow it down to the damaged lift at X: 1085, Y: 2. Wait for the lift, jump onto it carefully, ride it down to the river island, then jump off and collect the datacron."
+                                                              },
+                                                              {
+                                                                  "name":  "Presence Datacron",
+                                                                  "reward":  "+3 Presence",
+                                                                  "area":  "The Glarus Valley",
+                                                                  "coordinates":  "X: -82, Y: -268",
+                                                                  "notes":  "Ride the saddled thranta near X: -412, Y: -209 to the nest beside the datacron.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "In The Glarus Valley, find the saddled thranta around X: -412, Y: -209 below the Elysium ruins. Right-click the thranta and let it fly you to the nest. When it lands, the datacron is only a few steps away."
+                                                              },
+                                                              {
+                                                                  "name":  "Willpower Datacron",
+                                                                  "reward":  "+3 Willpower",
+                                                                  "area":  "Castle Panteer",
+                                                                  "coordinates":  "X: -2508, Y: -427",
+                                                                  "notes":  "Enter through the crack in the Castle Panteer door near X: -2489, Y: -370 and climb to the second floor.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Go to Castle Panteer in western Glarus Valley. Slip through the crack in the door around X: -2489, Y: -370, then head upstairs. Follow the northern route around the second floor because the southern route is blocked by a fallen pillar."
+                                                              },
+                                                              {
+                                                                  "name":  "Strength Datacron",
+                                                                  "reward":  "+4 Strength",
+                                                                  "area":  "Kaamos Territory / Lerantha Dam",
+                                                                  "coordinates":  "X: 2190, Y: -2019",
+                                                                  "notes":  "Use MGGS from the King\u0027s Pass vendor or negotiate the rocks and ladder below the dam face.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Bring an MGGS from the King\u0027s Pass vendor before attempting this route. Go to Lerantha Dam and work down to the dam face below the datacron area. Use the MGGS target or the rock-and-ladder route to reach the ledge, then climb to the datacron above the water."
+                                                              },
+                                                              {
+                                                                  "name":  "Endurance Datacron",
+                                                                  "reward":  "+3 Endurance",
+                                                                  "area":  "King\u0027s Pass",
+                                                                  "coordinates":  "X: 2721, Y: 2496",
+                                                                  "notes":  "Buy the Red Detonite Actuator from the vendor near X: 1869, Y: 1091, enter the cave at X: 2373, Y: 2449, and blast the wall.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Buy the Red Detonite Actuator from the King\u0027s Pass vendor around X: 1869, Y: 1091. Travel south to the Killik cave entrance near X: 2373, Y: 2449. Inside, use the actuator to open the blocked wall, then continue through the cave to the endurance datacron."
+                                                              }
+                                                          ],
+                                            "imageIncludesPins":  true
+                                        },
+                                        {
+                                            "name":  "Hoth",
+                                            "faction":  "Both",
+                                            "recommendedLevel":  "Late class story",
+                                            "summary":  "Large snow planet with long travel routes.",
+                                            "imagePath":  "data/images/datacrons/Hoth_DC.png",
+                                            "imageIncludesPins":  true,
+                                            "sourceUrl":  "https://www.ign.com/wikis/star-wars-the-old-republic/Datacron_Locations",
+                                            "datacrons":  [
+                                                              {
+                                                                  "name":  "Presence Datacron",
+                                                                  "reward":  "+4 Presence",
+                                                                  "area":  "Terror Brigade Compound",
+                                                                  "coordinates":  "X: 1039, Y: -1243",
+                                                                  "notes":  "Travel into the Terror Brigade Compound area for the presence datacron.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Travel to the Terror Brigade Compound and fight or ride through to the listed datacron area. The datacron is inside the compound route rather than on the open snowfield. Use quick travel/speeder unlocks to reduce the long return trip if you miss the turn."
+                                                              },
+                                                              {
+                                                                  "name":  "Red Matrix Shard",
+                                                                  "reward":  "Matrix Shard",
+                                                                  "area":  "Highmount Ridge",
+                                                                  "coordinates":  "X: -738, Y: 1705",
+                                                                  "notes":  "Requires Hydro-Thinner from the cantina vendor before collecting the shard.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Buy Hydro-Thinner before going to Highmount Ridge. Travel to the shard area and use the Hydro-Thinner where the frozen/blocked shard interaction requires it. Once the ice/blocker is cleared, collect the Red Matrix Shard."
+                                                              },
+                                                              {
+                                                                  "name":  "Endurance Datacron",
+                                                                  "reward":  "+4 Endurance",
+                                                                  "area":  "Starship Graveyard / Star of Coruscant",
+                                                                  "coordinates":  "X: 2837, Y: -375",
+                                                                  "notes":  "Inside the Star of Coruscant route in the Starship Graveyard.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Enter the Star of Coruscant wreck in the Starship Graveyard and work through the interior route. Follow the ship corridors and catwalks toward the endurance datacron location. Watch for drops inside the wreck; several paths look similar, so keep checking the map floor/section name."
+                                                              },
+                                                              {
+                                                                  "name":  "Cunning Datacron",
+                                                                  "reward":  "+4 Cunning",
+                                                                  "area":  "Starship Graveyard / Star of Coruscant",
+                                                                  "coordinates":  "X: 3144, Y: 475",
+                                                                  "notes":  "Use the Star of Coruscant interior platforming route.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Enter the fore section of the Star of Coruscant and go east to the lift. Take it to the fore catwalks, then climb from the forklift to containers, wall ledges, and the moving container route. Ride the moving container across, jump to the stationary containers, and continue the catwalk path to the datacron."
+                                                              },
+                                                              {
+                                                                  "name":  "Strength Datacron",
+                                                                  "reward":  "+4 Strength",
+                                                                  "area":  "Starship Graveyard",
+                                                                  "coordinates":  "X: -4102, Y: 115",
+                                                                  "notes":  "Defeat the droid holding the discharged datacron, then charge it at the device near the upper Star of Coruscant entrance.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Defeat the droid carrying the discharged datacron, then take it to the charging device near the upper Star of Coruscant entrance. After charging it, follow the outside ice/ship route back toward the datacron location. This route uses ice ledges along the crashed ship, so move slowly around the exterior edges."
+                                                              }
+                                                          ]
+                                        },
+                                        {
+                                            "name":  "Belsavis",
+                                            "faction":  "Both",
+                                            "recommendedLevel":  "Late class story",
+                                            "summary":  "Multi-zone planet with several lengthy datacron routes.",
+                                            "imagePath":  "data/images/datacrons/Belsavis_DC.png",
+                                            "sourceUrl":  "https://www.ign.com/wikis/star-wars-the-old-republic/Datacron_Locations",
+                                            "datacrons":  [
+                                                              {
+                                                                  "name":  "Willpower Datacron",
+                                                                  "reward":  "+4 Willpower",
+                                                                  "area":  "High Security Section",
+                                                                  "coordinates":  "X: -504, Y: 770",
+                                                                  "notes":  "Start climbing near X: -502, Y: 868 and follow the cliff edge, mushroom, and small rock ledge.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Start in the High Security Section near X: -837, Y: 778 and look for the passage through the rocks in the hill. Follow that rock passage instead of the main road. The path winds directly toward the datacron location."
+                                                              },
+                                                              {
+                                                                  "name":  "Endurance Datacron",
+                                                                  "reward":  "+4 Endurance",
+                                                                  "area":  "High Security Section / Lost Cavern",
+                                                                  "coordinates":  "X: -994, Y: -448",
+                                                                  "notes":  "From X: -907, Y: -428, turn around and follow the gap between the rocks; guarded by a champion enemy.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "At the northern end of the High Security Section, find the rock pathway leading downward toward the Lost Cavern. Follow it to the hidden cavern below. The cave contains strong/elite enemies and the datacron is guarded by a champion, so bring help or return later if needed."
+                                                              },
+                                                              {
+                                                                  "name":  "Presence Datacron",
+                                                                  "reward":  "+4 Presence",
+                                                                  "area":  "Maximum Security Section",
+                                                                  "coordinates":  "X: -1912, Y: -476",
+                                                                  "notes":  "Start through the crack near X: -2195, Y: -201 and follow the snowy path around the lava pool rocks.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Start around X: -2066, Y: -164 in the northern Maximum Security Section. Hug the right wall and pass through the small ice cave. Continue until you see the datacron below, then drop down carefully to the ledge containing it."
+                                                              },
+                                                              {
+                                                                  "name":  "Aim Datacron",
+                                                                  "reward":  "+4 Aim",
+                                                                  "area":  "The Tomb",
+                                                                  "coordinates":  "X: -787, Y: -1930",
+                                                                  "notes":  "From X: -790, Y: -1904, drop to the blue laser path and walk to the datacron.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Go to The Tomb near X: -790, Y: -1904. From the upper point, drop onto the blue laser/energy path below. Walk along that path directly to the datacron. After collecting it, use the teleporter behind the nearby rock to exit the area."
+                                                              },
+                                                              {
+                                                                  "name":  "Green Matrix Shard",
+                                                                  "reward":  "Matrix Shard",
+                                                                  "area":  "The Tomb",
+                                                                  "coordinates":  "X: -315, Y: -2173",
+                                                                  "notes":  "Matrix shard in The Tomb area.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Travel to The Tomb around X: -315, Y: -2173. Use the same deep Tomb area routing as the Aim datacron, then navigate to the shard pocket. Check the map carefully because the Tomb has several dead-end-looking rock routes."
+                                                              }
+                                                          ],
+                                            "imageIncludesPins":  true
+                                        },
+                                        {
+                                            "name":  "Corellia",
+                                            "faction":  "Both",
+                                            "recommendedLevel":  "Late class story",
+                                            "summary":  "End-of-class-story planet with several urban traversal routes.",
+                                            "imagePath":  "data/images/datacrons/Corellia_DC.png",
+                                            "sourceUrl":  "https://www.ign.com/wikis/star-wars-the-old-republic/Datacron_Locations",
+                                            "datacrons":  [
+                                                              {
+                                                                  "name":  "Willpower Datacron",
+                                                                  "reward":  "+4 Willpower",
+                                                                  "area":  "Corellia World Map",
+                                                                  "coordinates":  "X: 703, Y: 1718",
+                                                                  "notes":  "World-map datacron at the listed coordinates.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Go to the world-map coordinates X: 703, Y: 1718 and approach the datacron directly. This is the simplest Corellia entry compared with the crane, museum, and rooftop routes; use the planet map to line up the marker and collect it."
+                                                              },
+                                                              {
+                                                                  "name":  "Strength Datacron",
+                                                                  "reward":  "+4 Strength",
+                                                                  "area":  "Labor Valley / Central Workforce Habitation",
+                                                                  "coordinates":  "X: -2754, Y: -2007",
+                                                                  "notes":  "Use the slanted pipe, crane-carried skyhopper, shelving, vertical lift, and rooftops.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Start at X: -2895, Y: -2076 in Labor Valley. Run up the slanted pipe, hop onto the tarp, then jump onto the skyhopper being moved by the crane. Ride it to the shelving, drop into the fenced area, climb the beam and containers, use the vertical lift, then cross the roof/decking and final slanted beam to the datacron."
+                                                              },
+                                                              {
+                                                                  "name":  "Blue Matrix Shard",
+                                                                  "reward":  "Matrix Shard",
+                                                                  "area":  "Labor Valley / Derelict Service Area",
+                                                                  "coordinates":  "X: -2423, Y: -1063",
+                                                                  "notes":  "Matrix shard in the Derelict Service Area.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Go to the Derelict Service Area in Labor Valley and work toward X: -2423, Y: -1063. Follow the industrial ledges and service paths rather than the street-level route. The shard is tucked inside the service-area path, so stay along the machinery/wall route."
+                                                              },
+                                                              {
+                                                                  "name":  "Cunning Datacron",
+                                                                  "reward":  "+4 Cunning",
+                                                                  "area":  "Labor Valley / Manufacturing Power Generation",
+                                                                  "coordinates":  "X: -2662, Y: -3116",
+                                                                  "notes":  "Cunning datacron in Manufacturing Power Generation.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Travel to Manufacturing Power Generation in Labor Valley. Work through the industrial platforms toward X: -2662, Y: -3116, using the raised pipes and machinery paths where the street route stops. The datacron sits at the end of that power-generation platform route."
+                                                              },
+                                                              {
+                                                                  "name":  "Aim Datacron",
+                                                                  "reward":  "+4 Aim",
+                                                                  "area":  "Government District / Coronet Museums",
+                                                                  "coordinates":  "X: 3143, Y: -1793",
+                                                                  "notes":  "Aim datacron in the Coronet Museums area.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Go to the Coronet Museums area in the Government District. Work through the museum/platform route toward X: 3143, Y: -1793. Expect rooftop or upper-walkway navigation; if you are at street level below the marker, find the nearby ramps/elevated route instead of trying to climb directly."
+                                                              },
+                                                              {
+                                                                  "name":  "Presence Datacron",
+                                                                  "reward":  "+4 Presence",
+                                                                  "area":  "Government District / Port Pevaria",
+                                                                  "coordinates":  "X: 3425, Y: -3210",
+                                                                  "notes":  "Presence datacron in Port Pevaria.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Travel to Port Pevaria in the Government District and line up with X: 3425, Y: -3210. Use the port-side ramps and upper walkways to reach the datacron area. This is an urban traversal route, so keep looking for stairs, ramps, and ledges that move you above street level."
+                                                              },
+                                                              {
+                                                                  "name":  "Green Matrix Shard",
+                                                                  "reward":  "Matrix Shard",
+                                                                  "area":  "Axial Park / Deserted Thoroughfare",
+                                                                  "coordinates":  "X: 700, Y: -1890",
+                                                                  "notes":  "Requires MGGS from the Alderaan King\u0027s Pass vendor; collect the red crystal on Corellia if you are also doing fleet setup.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Requires MGGS from the Alderaan King\u0027s Pass vendor. Start at Axial Park around X: 412, Y: -1828 and enter the Corellian Museum of Starships. Take the elevator to the roof, climb onto the shuttle, drop to the wall/awning route, then use the blue MGGS target on the statue base. Continue south across rooftops into the Deserted Thoroughfare to reach the shard."
+                                                              }
+                                                          ],
+                                            "imageIncludesPins":  true
+                                        },
+                                        {
+                                            "name":  "Ilum",
+                                            "faction":  "Both",
+                                            "recommendedLevel":  "Post-class story",
+                                            "summary":  "Small endgame planet with a quick datacron cleanup route.",
+                                            "imagePath":  "data/images/datacrons/Ilum_DC.png",
+                                            "imageIncludesPins":  true,
+                                            "sourceUrl":  "https://www.ign.com/wikis/star-wars-the-old-republic/Datacron_Locations",
+                                            "datacrons":  [
+                                                              {
+                                                                  "name":  "Yellow Matrix Shard",
+                                                                  "reward":  "Matrix Shard",
+                                                                  "area":  "Ilum",
+                                                                  "coordinates":  "X: 311, Y: -379",
+                                                                  "notes":  "Yellow matrix shard at the listed Ilum coordinates.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Travel to the listed shard coordinates on Ilum and approach the marker directly. This shard is a simple location pickup compared with the ravine and exhaustion-zone datacrons; use the map to line up X: 311, Y: -379 and collect it once you reach the spot."
+                                                              },
+                                                              {
+                                                                  "name":  "Willpower Datacron",
+                                                                  "reward":  "+4 Willpower",
+                                                                  "area":  "Eastern Ice Shelf",
+                                                                  "coordinates":  "X: 304, Y: -1569",
+                                                                  "notes":  "Drop safely to the ravine from the northeast shelf, follow it west, and enter the cave near X: 309, Y: -1348.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Go to the northeast corner of the Eastern Ice Shelf around X: 967, Y: -1064. Drop down the ice ledges carefully to reach the ravine floor. Follow the ravine west until you find the cave entrance near X: 309, Y: -1348, then go through the short cave to the datacron."
+                                                              },
+                                                              {
+                                                                  "name":  "Endurance Datacron",
+                                                                  "reward":  "+4 Endurance",
+                                                                  "area":  "Eastern Ice Shelf / Contested Crossroads Ravine",
+                                                                  "coordinates":  "X: 103, Y: -78",
+                                                                  "notes":  "Take the lifts near X: 221, Y: -109 into the ravine and follow the north branch.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Start at the lifts around X: 221, Y: -109 and ride down into the ravine. Follow the ravine west, then take the northern/right branch at the split. The datacron is at the end of that branch near X: 103, Y: -78."
+                                                              },
+                                                              {
+                                                                  "name":  "Red Matrix Shard",
+                                                                  "reward":  "Matrix Shard",
+                                                                  "area":  "Eastern Ice Shelf",
+                                                                  "coordinates":  "X: 543, Y: 543",
+                                                                  "notes":  "Inside the small domed hut above the Republic base.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Go to the small domed hut above the Republic base at the Eastern Ice Shelf. The shard is inside the hut near X: 543, Y: 543. Imperial characters should approach from the west side of the Republic base and watch for level 50 guards."
+                                                              },
+                                                              {
+                                                                  "name":  "Aim Datacron",
+                                                                  "reward":  "+4 Aim",
+                                                                  "area":  "Eastern Ice Shelf",
+                                                                  "coordinates":  "X: 924, Y: 1076",
+                                                                  "notes":  "Run through the southeast exhaustion zone from near X: 1012, Y: 992, staying to the right edge.",
+                                                                  "imagePath":  "",
+                                                                  "guide":  "Start in the southeast corner of the Eastern Ice Shelf around X: 1012, Y: 992. Run into the exhaustion-zone blizzard while staying to the right edge after the promontory. Keep moving until you emerge into the clearing with the datacron near X: 924, Y: 1076."
+                                                              }
+                                                          ]
+                                        }
+                                    ]
+                    },
+                    {
+                        "name":  "Expansion \u0026 Special",
+                        "description":  "Post-launch, fleet, and special datacrons. These are best handled separately from leveling planets.",
+                        "planets":  [
+                                        {
+                                            "name":  "Fleet",
+                                            "faction":  "Republic / Empire",
+                                            "recommendedLevel":  "Special",
+                                            "summary":  "Special fleet datacron route. Usually worth a dedicated checklist because of setup requirements.",
+                                            "imagePath":  "",
+                                            "sourceUrl":  "https://swtorista.com/articles/swtor-datacrons-guide/",
+                                            "datacrons":  [
+                                                              {
+                                                                  "name":  "Fleet Datacron Route",
+                                                                  "reward":  "Special datacron",
+                                                                  "area":  "Fleet",
+                                                                  "coordinates":  "",
+                                                                  "notes":  "Group/setup requirements should be tracked here later.",
+                                                                  "imagePath":  ""
+                                                              }
+                                                          ]
+                                        },
+                                        {
+                                            "name":  "Makeb",
+                                            "faction":  "Both",
+                                            "recommendedLevel":  "Expansion",
+                                            "summary":  "Rise of the Hutt Cartel datacrons.",
+                                            "imagePath":  "",
+                                            "sourceUrl":  "https://swtorista.com/articles/swtor-datacrons-guide/",
+                                            "datacrons":  [
+                                                              {
+                                                                  "name":  "Makeb Datacron Route",
+                                                                  "reward":  "Expansion datacrons",
+                                                                  "area":  "Makeb",
+                                                                  "coordinates":  "",
+                                                                  "notes":  "Add exact coordinates and screenshot when collected.",
+                                                                  "imagePath":  ""
+                                                              }
+                                                          ]
+                                        },
+                                        {
+                                            "name":  "Rishi",
+                                            "faction":  "Both",
+                                            "recommendedLevel":  "Expansion",
+                                            "summary":  "Shadow of Revan-era datacron route.",
+                                            "imagePath":  "",
+                                            "sourceUrl":  "https://swtorista.com/articles/swtor-datacrons-guide/",
+                                            "datacrons":  [
+                                                              {
+                                                                  "name":  "Rishi Datacron Route",
+                                                                  "reward":  "Expansion datacrons",
+                                                                  "area":  "Rishi",
+                                                                  "coordinates":  "",
+                                                                  "notes":  "Add exact coordinates and screenshot when collected.",
+                                                                  "imagePath":  ""
+                                                              }
+                                                          ]
+                                        },
+                                        {
+                                            "name":  "Ossus",
+                                            "faction":  "Both",
+                                            "recommendedLevel":  "Expansion",
+                                            "summary":  "Jedi Under Siege-era datacron route.",
+                                            "imagePath":  "",
+                                            "sourceUrl":  "https://swtorista.com/articles/swtor-datacrons-guide/",
+                                            "datacrons":  [
+                                                              {
+                                                                  "name":  "Ossus Datacron Route",
+                                                                  "reward":  "Expansion datacrons",
+                                                                  "area":  "Ossus",
+                                                                  "coordinates":  "",
+                                                                  "notes":  "Add exact coordinates and screenshot when collected.",
+                                                                  "imagePath":  ""
+                                                              }
+                                                          ]
+                                        },
+                                        {
+                                            "name":  "Onderon",
+                                            "faction":  "Both",
+                                            "recommendedLevel":  "Expansion",
+                                            "summary":  "Onslaught-era datacron route.",
+                                            "imagePath":  "",
+                                            "sourceUrl":  "https://swtorista.com/articles/swtor-datacrons-guide/",
+                                            "datacrons":  [
+                                                              {
+                                                                  "name":  "Onderon Datacron Route",
+                                                                  "reward":  "Expansion datacrons",
+                                                                  "area":  "Onderon",
+                                                                  "coordinates":  "",
+                                                                  "notes":  "Add exact coordinates and screenshot when collected.",
+                                                                  "imagePath":  ""
+                                                              }
+                                                          ]
+                                        },
+                                        {
+                                            "name":  "Mek-Sha",
+                                            "faction":  "Both",
+                                            "recommendedLevel":  "Expansion",
+                                            "summary":  "Onslaught-era station route.",
+                                            "imagePath":  "",
+                                            "sourceUrl":  "https://swtorista.com/articles/swtor-datacrons-guide/",
+                                            "datacrons":  [
+                                                              {
+                                                                  "name":  "Mek-Sha Datacron Route",
+                                                                  "reward":  "Expansion datacrons",
+                                                                  "area":  "Mek-Sha",
+                                                                  "coordinates":  "",
+                                                                  "notes":  "Add exact coordinates and screenshot when collected.",
+                                                                  "imagePath":  ""
+                                                              }
+                                                          ]
+                                        },
+                                        {
+                                            "name":  "Dark vs Light",
+                                            "faction":  "Both",
+                                            "recommendedLevel":  "Special",
+                                            "summary":  "Special Dark vs Light datacrons tracked separately from planet routes.",
+                                            "imagePath":  "",
+                                            "sourceUrl":  "https://swtorista.com/articles/swtor-datacrons-guide/",
+                                            "datacrons":  [
+                                                              {
+                                                                  "name":  "Dark vs Light Datacron Route",
+                                                                  "reward":  "Special datacrons",
+                                                                  "area":  "Galaxy",
+                                                                  "coordinates":  "",
+                                                                  "notes":  "Add exact requirements and screenshots later.",
+                                                                  "imagePath":  ""
+                                                              }
+                                                          ]
+                                        }
+                                    ]
+                    }
+                ],
+    "sources":  [
+                    {
+                        "name":  "Swtorista SWTOR Datacrons Guide",
+                        "url":  "https://swtorista.com/articles/swtor-datacrons-guide/"
+                    },
+                    {
+                        "name":  "VULKK SWTOR Datacrons Guide",
+                        "url":  "https://vulkk.com/2016/02/07/swtor-datacrons-lore-collection/"
+                    },
+                    {
+                        "name":  "SWTOR Fandom Dromund Kaas Map - CC BY-NC-SA",
+                        "url":  "https://swtor.fandom.com/wiki/Category:Dromund_Kaas_maps"
+                    },
+                    {
+                        "name":  "IGN SWTOR Datacron Locations",
+                        "url":  "https://www.ign.com/wikis/star-wars-the-old-republic/Datacron_Locations"
+                    },
+                    {
+                        "name":  "SWTOR Fandom Datacron Reference",
+                        "url":  "https://swtor.fandom.com/wiki/Datacron"
+                    }
+                ]
+}

@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <AssemblyName>SWTOR Holotracker</AssemblyName>
+    <RootNamespace>SwtorDailyTool</RootNamespace>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>data\images\Icon-removebg-preview.ico</ApplicationIcon>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>false</SelfContained>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Installer\**\*.cs" />
+    <None Remove="Installer\**\*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="data\**\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3912.50" />
+  </ItemGroup>
+
+  <Target Name="CleanPublishedExtras" AfterTargets="Publish">
+    <ItemGroup>
+      <PublishedExtrasToDelete Include="$(PublishDir)**\*.xml" />
+      <PublishedExtrasToDelete Include="$(PublishDir)**\*.pdb" />
+      <PublishedExtrasToDelete Include="$(PublishDir)SWTOR Holotracker.dll" />
+      <PublishedExtrasToDelete Include="$(PublishDir)SWTOR Holotracker.deps.json" />
+      <PublishedExtrasToDelete Include="$(PublishDir)SWTOR Holotracker.runtimeconfig.json" />
+      <PublishedExtrasToDelete Include="$(PublishDir)Microsoft.Web.WebView2.Core.dll" />
+      <PublishedExtrasToDelete Include="$(PublishDir)Microsoft.Web.WebView2.WinForms.dll" />
+      <PublishedExtrasToDelete Include="$(PublishDir)Microsoft.Web.WebView2.Wpf.dll" />
+    </ItemGroup>
+    <Delete Files="@(PublishedExtrasToDelete)" TreatErrorsAsWarnings="true" />
+  </Target>
+
+</Project>

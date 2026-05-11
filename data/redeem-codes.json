@@ -1,0 +1,71 @@
+﻿{
+    "title":  "Redeem Codes",
+    "description":  "SWTOR account redeem codes. Some older event codes may already be claimed or expired; copy the code and redeem it on the official SWTOR account code page.",
+    "lastVerified":  "2026-04-27",
+    "codes":  [
+                  {
+                      "code":  "SQUADRONS",
+                      "imagePath":  "data/images/Redeem Code/squadrons-corellian-stardrive-vanguard.jpg",
+                      "reward":  "Corellian Stardrive Vanguard speeder.",
+                      "status":  "Active free code",
+                      "note":  "Swtorista lists SQUADRONS as the free code for the Corellian Stardrive Vanguard mount.",
+                      "source":  "https://swtorista.com/mount/corellian-stardrive-vanguard"
+                  },
+                  {
+                      "code":  "NYCANTINA16",
+                      "imagePath":  "data/images/Redeem Code/nycantina16-korrealis-sheriff.jpg",
+                      "reward":  "Korrealis Sheriff speeder.",
+                      "status":  "Legacy cantina code",
+                      "note":  "Swtorista lists NYCANTINA16 as the active code for the Korrealis Sheriff free mount. The similar 2016 CelebrationCantina16/Korrealis Regent promotion is retired.",
+                      "source":  "https://swtorista.com/mount/korrealis-sheriff"
+                  },
+                  {
+                      "code":  "SWCANTINA17",
+                      "imagePath":  "data/images/Redeem Code/swcantina17-korrealis-viscount.jpg",
+                      "reward":  "Korrealis Viscount speeder.",
+                      "status":  "Legacy cantina code",
+                      "note":  "Older cantina reward code. Availability can vary by account and current redemption status.",
+                      "source":  "https://swtorista.com/mount/korrealis-viscount"
+                  },
+                  {
+                      "code":  "SWCELEBRATION17",
+                      "imagePath":  "data/images/Redeem Code/swcelebration17-m8-3r.jpg",
+                      "reward":  "M8-3R Astromech Droid mini-pet.",
+                      "status":  "Legacy celebration code",
+                      "note":  "Star Wars Celebration 2017 code commonly listed with SWTOR free code collections.",
+                      "source":  "https://swtorista.com/pet/m8-3r-astromech-droid"
+                  },
+                  {
+                      "code":  "NYCANTINA19",
+                      "imagePath":  "data/images/Redeem Code/nycantina19-prinawe-aggregate.jpg",
+                      "reward":  "Prinawe Aggregate speeder.",
+                      "status":  "Legacy cantina code",
+                      "note":  "Community lists connect NYCANTINA19 to the Prinawe Aggregate. Swtorista currently marks Prinawe Aggregate as retired promotional content.",
+                      "source":  "https://swtorista.com/mount/prinawe-aggregate"
+                  },
+                  {
+                      "code":  "LotSKrovos",
+                      "imagePath":  "data/images/Redeem Code/lotskrovos-poster-darth-krovos.jpg",
+                      "reward":  "Stronghold decoration: Poster: Darth Krovos.",
+                      "status":  "Retired / may fail if expired",
+                      "note":  "Swtorista lists the code LotSKrovos for this decoration, but marks the item as retired.",
+                      "source":  "https://swtorista.com/decorations/poster-darth-krovos/"
+                  },
+                  {
+                      "code":  "LOSTPADAWAN",
+                      "imagePath":  "data/images/Redeem Code/lostpadawan-poster-sahar-kateen.jpg",
+                      "reward":  "Stronghold decoration: Poster: Sa\u0027har Kateen.",
+                      "status":  "Free decoration code",
+                      "note":  "Swtorista lists LOSTPADAWAN as the code for the Poster: Sa\u0027har Kateen stronghold decoration.",
+                      "source":  "https://swtorista.com/decorations/poster-sahar-kateen/"
+                  },
+                  {
+                      "code":  "SWTORSWC25",
+                      "imagePath":  "data/images/Redeem Code/swtorswc25-amethyst-vulptilla-pup.jpg",
+                      "reward":  "Amethyst Vulptilla Pup mini-pet.",
+                      "status":  "Star Wars Celebration 2025 code",
+                      "note":  "Swtorista lists SWTORSWC25 as the code for the Amethyst Vulptilla Pup pet.",
+                      "source":  "https://swtorista.com/pet/amethyst-vulptilla-pup"
+                  }
+              ]
+}

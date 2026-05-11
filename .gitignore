@@ -1,0 +1,13 @@
+bin/
+obj/
+dist/
+artifacts/
+.vs/
+.claude/
+__pycache__/
+*.pyc
+*.user
+*.suo
+data/crew-ocr-last.txt
+data/debug-panel.png
+data/crew-skill-timers.json
