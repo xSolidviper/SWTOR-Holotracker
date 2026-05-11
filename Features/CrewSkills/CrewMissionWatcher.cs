@@ -8,11 +8,21 @@ public sealed class MissionSendDetectedEventArgs : EventArgs
     public required MissionsPanelLayout Layout { get; init; }
     public required Rectangle SelectedMissionRowOnScreen { get; init; }
     public required Bitmap Screenshot { get; init; }
+    public required Point ScreenshotOrigin { get; init; }
+}
+
+public sealed class CrewMissionSnapshotEventArgs : EventArgs
+{
+    public required Point ClickPoint { get; init; }
+    public required MissionsPanelLayout Layout { get; init; }
+    public required Bitmap Screenshot { get; init; }
+    public required Point ScreenshotOrigin { get; init; }
 }
 
 public sealed class CrewMissionWatcher : IDisposable
 {
     public event EventHandler<MissionSendDetectedEventArgs>? MissionSendDetected;
+    public event EventHandler<CrewMissionSnapshotEventArgs>? ActiveCrewSnapshotCaptured;
     public event Action<string>? StatusChanged;
 
     private readonly Win32MouseHook _hook = new();
@@ -39,6 +49,7 @@ public sealed class CrewMissionWatcher : IDisposable
 
         _hook.Install();
         _running = true;
+        CrewMissionDebugLog.Write("Crew mission watcher started; mouse hook installed.");
         Status("Watching for SEND COMPANION clicks.");
     }
 
@@ -53,6 +64,7 @@ public sealed class CrewMissionWatcher : IDisposable
         _running = false;
         _lastListClick = null;
         _cachedLayout = null;
+        CrewMissionDebugLog.Write("Crew mission watcher stopped; mouse hook uninstalled.");
         Status("Stopped.");
     }
 
@@ -81,9 +93,10 @@ public sealed class CrewMissionWatcher : IDisposable
 
             if (layout.SendCompanionRect.Contains(clickPoint))
             {
+                QueueActiveCrewSnapshot(clickPoint, layout);
                 if (_lastListClick is { } lastClick && layout.MissionListRect.Contains(lastClick))
                 {
-                    var screenshot = CaptureScreenContaining(clickPoint);
+                    var screenshot = CaptureScreenContaining(clickPoint, out var screenshotOrigin);
                     if (screenshot is null)
                     {
                         CrewMissionDebugLog.Write($"SEND COMPANION at {clickPoint} — screenshot capture failed.");
@@ -96,7 +109,8 @@ public sealed class CrewMissionWatcher : IDisposable
                         ClickPoint = clickPoint,
                         Layout = layout,
                         SelectedMissionRowOnScreen = rowRect,
-                        Screenshot = screenshot
+                        Screenshot = screenshot,
+                        ScreenshotOrigin = screenshotOrigin
                     };
                     CrewMissionDebugLog.Write(
                         $"SEND COMPANION at {clickPoint} — captured. lastListClick={lastClick}, dialogRect={layout.DialogRect}, rowRect={rowRect}.");
@@ -145,39 +159,82 @@ public sealed class CrewMissionWatcher : IDisposable
             return cached;
         }
 
-        using var screenshot = CaptureScreenContaining(clickPoint);
+        using var screenshot = CaptureScreenContaining(clickPoint, out var screenshotOrigin);
         if (screenshot is null)
         {
             return null;
         }
 
-        var layout = MissionsPanelLocator.Locate(screenshot);
+        var layout = MissionsPanelLocator.Locate(screenshot, new Point(clickPoint.X - screenshotOrigin.X, clickPoint.Y - screenshotOrigin.Y));
         if (layout is null)
         {
             _cachedLayout = null;
             return null;
         }
 
+        layout = TranslateLayout(layout, screenshotOrigin);
         _cachedLayout = layout;
         _layoutCachedAt = DateTime.UtcNow;
         return layout;
     }
 
+    private static MissionsPanelLayout TranslateLayout(MissionsPanelLayout layout, Point offset)
+    {
+        return new MissionsPanelLayout(
+            Offset(layout.DialogRect, offset),
+            Offset(layout.SendCompanionRect, offset),
+            Offset(layout.MissionListRect, offset),
+            Offset(layout.CompanionPanelRect, offset));
+    }
+
+    private static Rectangle Offset(Rectangle rect, Point offset)
+    {
+        return new Rectangle(rect.X + offset.X, rect.Y + offset.Y, rect.Width, rect.Height);
+    }
+
     private static Rectangle BuildSelectedRowRect(Rectangle listRect, Point click)
     {
-        // SWTOR mission rows are ~175px tall (title, 2-3 lines of description, yield line,
-        // influence line). Clicking anywhere in the row should still capture the title, so
-        // the crop runs from 200px above to 30px below the click. The previous row's bottom
-        // metadata gets included sometimes, but the parser drops "Influence:" / "Yield:" /
-        // "Cost:" lines and finds the title.
-        var top = Math.Max(listRect.Top, click.Y - 200);
-        var bottom = Math.Min(listRect.Bottom, click.Y + 30);
+        // SWTOR mission rows put reward/influence below the description. A click near the
+        // title needs much more space below it, while a click near the reward line still
+        // needs enough space above to keep the title in-frame.
+        var top = Math.Max(listRect.Top, click.Y - 120);
+        var bottom = Math.Min(listRect.Bottom, click.Y + 190);
         return Rectangle.FromLTRB(listRect.Left, top, listRect.Right, bottom);
     }
 
-    private static Bitmap? CaptureScreenContaining(Point point)
+    private void QueueActiveCrewSnapshot(Point clickPoint, MissionsPanelLayout layout)
+    {
+        ThreadPool.QueueUserWorkItem(_ =>
+        {
+            try
+            {
+                Thread.Sleep(850);
+                var screenshot = CaptureScreenContaining(clickPoint, out var screenshotOrigin);
+                if (screenshot is null)
+                {
+                    CrewMissionDebugLog.Write("ACTIVE CREW SNAPSHOT — screenshot capture failed.");
+                    return;
+                }
+
+                Raise(new CrewMissionSnapshotEventArgs
+                {
+                    ClickPoint = clickPoint,
+                    Layout = layout,
+                    Screenshot = screenshot,
+                    ScreenshotOrigin = screenshotOrigin
+                });
+            }
+            catch (Exception ex)
+            {
+                CrewMissionDebugLog.Write($"ACTIVE CREW SNAPSHOT error: {ex}");
+            }
+        });
+    }
+
+    private static Bitmap? CaptureScreenContaining(Point point, out Point screenshotOrigin)
     {
         var screen = Screen.FromPoint(point);
+        screenshotOrigin = screen.Bounds.Location;
         if (screen.Bounds.IsEmpty)
         {
             return null;
@@ -206,6 +263,11 @@ public sealed class CrewMissionWatcher : IDisposable
     private void Raise(MissionSendDetectedEventArgs args)
     {
         Post(() => MissionSendDetected?.Invoke(this, args));
+    }
+
+    private void Raise(CrewMissionSnapshotEventArgs args)
+    {
+        Post(() => ActiveCrewSnapshotCaptured?.Invoke(this, args));
     }
 
     private void Post(Action action)

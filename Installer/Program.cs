@@ -17,6 +17,9 @@ internal static class Program
 
 internal sealed class InstallerForm : Form
 {
+    private static readonly Version PackageVersion =
+        typeof(InstallerForm).Assembly.GetName().Version ?? new Version(1, 0, 0);
+
     private readonly TextBox _pathBox = new();
     private readonly Button _browseButton = new();
     private readonly Button _installButton = new();
@@ -74,6 +77,7 @@ internal sealed class InstallerForm : Form
             "SWTOR Holotracker");
         _pathBox.Location = new Point(31, 137);
         _pathBox.Size = new Size(455, 27);
+        _pathBox.TextChanged += (_, _) => RefreshInstallMode();
         Controls.Add(_pathBox);
 
         _browseButton.Text = "Browse...";
@@ -126,6 +130,8 @@ internal sealed class InstallerForm : Form
         _installButton.Size = new Size(110, 34);
         _installButton.Click += async (_, _) => await InstallAsync();
         Controls.Add(_installButton);
+
+        RefreshInstallMode();
     }
 
     private void BrowseInstallPath()
@@ -142,6 +148,7 @@ internal sealed class InstallerForm : Form
         if (dialog.ShowDialog(this) == DialogResult.OK)
         {
             _pathBox.Text = dialog.SelectedPath;
+            RefreshInstallMode();
         }
     }
 
@@ -159,7 +166,7 @@ internal sealed class InstallerForm : Form
         {
             await Task.Run(() => InstallTo(installDir));
             _progress.Value = 100;
-            _statusLabel.Text = "Installed.";
+            _statusLabel.Text = "Finished.";
 
             var exePath = Path.Combine(installDir, "SWTOR Holotracker.exe");
             if (_launchAfterInstall.Checked && File.Exists(exePath))
@@ -167,7 +174,6 @@ internal sealed class InstallerForm : Form
                 Process.Start(new ProcessStartInfo(exePath) { WorkingDirectory = installDir, UseShellExecute = true });
             }
 
-            MessageBox.Show(this, "SWTOR Holotracker has been installed.", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
             Close();
         }
         catch (Exception ex)
@@ -230,6 +236,66 @@ internal sealed class InstallerForm : Form
             TryDeleteFile(tempZip);
             TryDeleteDirectory(tempExtract);
         }
+    }
+
+    private void RefreshInstallMode()
+    {
+        var installDir = _pathBox.Text.Trim();
+        var installedVersion = GetInstalledVersion(installDir);
+        if (installedVersion is null)
+        {
+            _installButton.Text = "Install";
+            _statusLabel.Text = $"Ready to install v{FormatVersion(PackageVersion)}.";
+            return;
+        }
+
+        var comparison = installedVersion.CompareTo(PackageVersion);
+        if (comparison < 0)
+        {
+            _installButton.Text = "Update App";
+            _statusLabel.Text = $"Installed v{FormatVersion(installedVersion)}. Ready to update to v{FormatVersion(PackageVersion)}.";
+        }
+        else if (comparison == 0)
+        {
+            _installButton.Text = "Reinstall";
+            _statusLabel.Text = $"v{FormatVersion(installedVersion)} is already installed.";
+        }
+        else
+        {
+            _installButton.Text = "Install";
+            _statusLabel.Text = $"Installed v{FormatVersion(installedVersion)} is newer than this setup v{FormatVersion(PackageVersion)}.";
+        }
+    }
+
+    private static Version? GetInstalledVersion(string installDir)
+    {
+        if (string.IsNullOrWhiteSpace(installDir))
+        {
+            return null;
+        }
+
+        var exePath = Path.Combine(installDir, "SWTOR Holotracker.exe");
+        if (!File.Exists(exePath))
+        {
+            return null;
+        }
+
+        try
+        {
+            var info = FileVersionInfo.GetVersionInfo(exePath);
+            return Version.TryParse(info.FileVersion, out var version) ? version : null;
+        }
+        catch
+        {
+            return null;
+        }
+    }
+
+    private static string FormatVersion(Version version)
+    {
+        return version.Revision > 0
+            ? version.ToString()
+            : $"{version.Major}.{version.Minor}.{version.Build}";
     }
 
     private static void PreserveSettingsThenReplace(string sourceDir, string installDir)

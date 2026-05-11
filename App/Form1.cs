@@ -2806,7 +2806,7 @@ public partial class Form1 : Form
         var bar = new Panel
         {
             Width = 820,
-            Height = 64,
+            Height = 82,
             BackColor = _panel,
             Margin = new Padding(0, 0, 0, 6)
         };
@@ -2856,12 +2856,12 @@ public partial class Form1 : Form
         {
             AutoSize = false,
             Width = 820 - 32,
-            Height = 18,
+            Height = 34,
             ForeColor = _muted,
             Font = new Font(Font.FontFamily, 8.5F, FontStyle.Italic),
             Location = new Point(16, 44),
             BackColor = Color.Transparent,
-            Text = "Idle."
+            Text = "Idle. Crew timers require Tesseract OCR and Holotracker must run at the same permission level as SWTOR."
         };
         _crewMissionStatus = status;
 
@@ -3064,6 +3064,14 @@ public partial class Form1 : Form
                 EndCap = System.Drawing.Drawing2D.LineCap.Round
             };
             graphics.DrawArc(progressPen, ringRect, -90, sweep);
+        }
+
+        var percent = timer.IsDone ? "100%" : $"{(int)Math.Floor(timer.Progress * 100)}%";
+        using (var percentFont = new Font(Font.FontFamily, 9F, FontStyle.Bold))
+        using (var percentBrush = new SolidBrush(timer.IsDone ? Color.FromArgb(120, 230, 140) : _muted))
+        using (var format = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
+        {
+            graphics.DrawString(percent, percentFont, percentBrush, ringRect, format);
         }
 
         // Render any active completion-burst particles for this row.
@@ -5558,15 +5566,26 @@ public partial class Form1 : Form
             {
                 _crewMissionToggle.Text = "Enable Skill Tracking";
             }
+            if (_crewMissionStatus is not null)
+            {
+                _crewMissionStatus.Text = "Paused.";
+            }
         }
         else
         {
             try
             {
                 _crewMissionWatcher.Start();
+                _missionOcrPipeline ??= new MissionOcrPipeline();
                 if (_crewMissionToggle is not null)
                 {
                     _crewMissionToggle.Text = "Disable Skill Tracking";
+                }
+                if (_crewMissionStatus is not null)
+                {
+                    _crewMissionStatus.Text = _missionOcrPipeline.IsAvailable
+                        ? "Watching. If SWTOR is running as admin, run Holotracker as admin too."
+                        : "Tesseract OCR was not found. Install Tesseract, then restart Holotracker to enable crew timer detection.";
                 }
             }
             catch (Exception ex)
@@ -5598,7 +5617,7 @@ public partial class Form1 : Form
             {
                 if (_crewMissionStatus is not null)
                 {
-                    _crewMissionStatus.Text = "Tesseract OCR was not found — install Tesseract to enable timer detection.";
+                    _crewMissionStatus.Text = "Tesseract OCR was not found. Install Tesseract, then restart Holotracker to enable crew timer detection.";
                 }
                 args.Screenshot.Dispose();
                 return;
@@ -5626,15 +5645,7 @@ public partial class Form1 : Form
                 }
 
                 var capture = t.Result;
-                var timer = new CrewMissionTimer(
-                    capture.Companion,
-                    capture.MissionName,
-                    startedAtUtc,
-                    capture.Duration,
-                    capture.Yield,
-                    capture.Influence);
-                _crewMissionStore.Upsert(timer);
-                _crewMissionNotified.Remove(capture.Companion);
+                UpsertCrewMissionTimer(capture, startedAtUtc);
                 BeginInvoke(() =>
                 {
                     if (_crewMissionStatus is not null)
@@ -5644,7 +5655,75 @@ public partial class Form1 : Form
                 });
             }, TaskScheduler.Default);
         };
+        watcher.ActiveCrewSnapshotCaptured += (_, args) =>
+        {
+            _missionOcrPipeline ??= new MissionOcrPipeline();
+            if (!_missionOcrPipeline.IsAvailable)
+            {
+                args.Screenshot.Dispose();
+                return;
+            }
+
+            var capturedAtUtc = DateTime.UtcNow;
+            var captureTask = _missionOcrPipeline.CaptureActiveCrewMissionsAsync(
+                args.Screenshot,
+                args.ScreenshotOrigin,
+                args.Layout);
+            args.Screenshot.Dispose();
+
+            captureTask.ContinueWith(t =>
+            {
+                if (t.IsFaulted || t.Result.Count == 0)
+                {
+                    return;
+                }
+
+                var count = 0;
+                var existingCompanions = new HashSet<string>(
+                    _crewMissionStore.Snapshot().Select(timer => timer.Companion),
+                    StringComparer.OrdinalIgnoreCase);
+                foreach (var capture in t.Result)
+                {
+                    if (existingCompanions.Contains(capture.Companion))
+                    {
+                        continue;
+                    }
+
+                    UpsertCrewMissionTimer(capture, capturedAtUtc);
+                    existingCompanions.Add(capture.Companion);
+                    count++;
+                }
+
+                if (count == 0)
+                {
+                    return;
+                }
+
+                BeginInvoke(() =>
+                {
+                    if (_crewMissionStatus is not null)
+                    {
+                        _crewMissionStatus.Text = count == 1
+                            ? "Recovered 1 active crew mission from the Crew Skills panel."
+                            : $"Recovered {count} active crew missions from the Crew Skills panel.";
+                    }
+                });
+            }, TaskScheduler.Default);
+        };
         return watcher;
+    }
+
+    private void UpsertCrewMissionTimer(MissionSendCapture capture, DateTime startedAtUtc)
+    {
+        var timer = new CrewMissionTimer(
+            capture.Companion,
+            capture.MissionName,
+            startedAtUtc,
+            capture.Duration,
+            capture.Yield,
+            capture.Influence);
+        _crewMissionStore.Upsert(timer);
+        _crewMissionNotified.Remove(capture.Companion);
     }
 
     private static string FormatDuration(TimeSpan duration)

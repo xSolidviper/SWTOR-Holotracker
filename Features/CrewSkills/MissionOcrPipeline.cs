@@ -32,8 +32,8 @@ public sealed class MissionOcrPipeline
 
         // Copy the rectangles + a snapshot of the screenshot before returning to the caller —
         // the caller disposes args.Screenshot as soon as the event handler returns.
-        var rowRect = ClampToBitmap(args.SelectedMissionRowOnScreen, args.Screenshot);
-        var companionRect = ClampToBitmap(args.Layout.CompanionPanelRect, args.Screenshot);
+        var rowRect = ClampToBitmap(ToBitmapRect(args.SelectedMissionRowOnScreen, args.ScreenshotOrigin), args.Screenshot);
+        var companionRect = ClampToBitmap(ToBitmapRect(args.Layout.CompanionPanelRect, args.ScreenshotOrigin), args.Screenshot);
 
         Bitmap rowCrop = args.Screenshot.Clone(rowRect, args.Screenshot.PixelFormat);
         Bitmap companionCrop = args.Screenshot.Clone(companionRect, args.Screenshot.PixelFormat);
@@ -83,6 +83,71 @@ public sealed class MissionOcrPipeline
                 rowCrop.Dispose();
                 companionCrop.Dispose();
             }
+        });
+    }
+
+    public Task<IReadOnlyList<MissionSendCapture>> CaptureActiveCrewMissionsAsync(
+        Bitmap screenshot,
+        Point screenshotOrigin,
+        MissionsPanelLayout? missionsPanel)
+    {
+        if (_tesseractPath is null)
+        {
+            return Task.FromResult<IReadOnlyList<MissionSendCapture>>([]);
+        }
+
+        var localMissionPanel = missionsPanel is null
+            ? null
+            : TranslateLayout(missionsPanel, new Point(-screenshotOrigin.X, -screenshotOrigin.Y));
+        var layout = MissionsPanelLocator.LocateCrewSkillsPanel(screenshot, localMissionPanel);
+        if (layout is null)
+        {
+            CrewMissionDebugLog.Write("ACTIVE CREW SCAN — Crew Skills panel was not detected.");
+            return Task.FromResult<IReadOnlyList<MissionSendCapture>>([]);
+        }
+
+        return Task.Run<IReadOnlyList<MissionSendCapture>>(() =>
+        {
+            var captures = new List<MissionSendCapture>();
+            var debug = new System.Text.StringBuilder();
+            var rowHeight = Math.Clamp((int)(layout.DialogRect.Height * 0.17), 82, 120);
+            var rowStep = Math.Max(72, rowHeight - 8);
+
+            for (var y = layout.ActiveMissionListRect.Top; y < layout.ActiveMissionListRect.Bottom - 40; y += rowStep)
+            {
+                var rowRect = Rectangle.FromLTRB(
+                    layout.ActiveMissionListRect.Left + (int)(layout.ActiveMissionListRect.Width * 0.13),
+                    y,
+                    layout.ActiveMissionListRect.Right - (int)(layout.ActiveMissionListRect.Width * 0.12),
+                    Math.Min(y + rowHeight, layout.ActiveMissionListRect.Bottom));
+                rowRect = ClampToBitmap(rowRect, screenshot);
+
+                using var rowCrop = screenshot.Clone(rowRect, screenshot.PixelFormat);
+                var rowText = OcrRegion(rowCrop, psm: 6);
+                if (string.IsNullOrWhiteSpace(rowText))
+                {
+                    continue;
+                }
+
+                debug.AppendLine($"  --- active row y={y} ---");
+                debug.AppendLine(IndentLines(rowText.TrimEnd()));
+
+                var capture = ParseActiveCrewMissionRow(rowText);
+                if (capture is not null)
+                {
+                    captures.Add(capture);
+                }
+            }
+
+            var distinct = captures
+                .GroupBy(capture => capture.Companion, StringComparer.OrdinalIgnoreCase)
+                .Select(group => group.First())
+                .ToList();
+
+            CrewMissionDebugLog.Write(
+                $"ACTIVE CREW SCAN — found {distinct.Count} visible mission row(s).\n"
+                + debug.ToString().TrimEnd());
+            return distinct;
         });
     }
 
@@ -295,7 +360,7 @@ public sealed class MissionOcrPipeline
             title = title.TrimEnd('.', ',', ';', ':', '-', ' ');
             if (title.Length >= 4 && Regex.IsMatch(title, "[A-Za-z]{3,}"))
             {
-                return CleanText(title);
+                return CleanMissionTitle(title);
             }
         }
 
@@ -327,7 +392,7 @@ public sealed class MissionOcrPipeline
             title = title.TrimEnd('.', ',', ';', ':', '-', ' ');
             if (title.Length >= 4 && Regex.IsMatch(title, "[A-Za-z]{3,}"))
             {
-                return CleanText(title);
+                return CleanMissionTitle(title);
             }
         }
 
@@ -369,7 +434,7 @@ public sealed class MissionOcrPipeline
                 continue;
             }
 
-            return CleanText(trimmed);
+            return CleanMissionTitle(trimmed);
         }
 
         return null;
@@ -430,7 +495,8 @@ public sealed class MissionOcrPipeline
             var lower = line.ToLowerInvariant();
             if (lower.Contains("efficiency") || lower.Contains("critical rate")
                 || lower.Contains("for crew") || lower.Contains("skill tasks")
-                || lower.Contains("influence:") || lower.Contains("yield"))
+                || lower.Contains("influence:") || lower.Contains("yield")
+                || lower.Contains("companion gifts"))
             {
                 continue;
             }
@@ -483,7 +549,7 @@ public sealed class MissionOcrPipeline
                 if (lowerToken is "send" or "send your" or "missions" or "mission"
                     or "grade" or "rich" or "bountiful" or "abundant" or "moderate"
                     or "dwindling" or "yield" or "cost" or "influence" or "lvl" or "level"
-                    or "time" or "critical")
+                    or "time" or "critical" or "rank" or "companion" or "gifts")
                 {
                     continue;
                 }
@@ -518,6 +584,12 @@ public sealed class MissionOcrPipeline
             RegexOptions.IgnoreCase);
         if (!match.Success)
         {
+            var gifts = Regex.Match(collapsed, @"Rank\s+\d+\s+Companion\s+Gifts", RegexOptions.IgnoreCase);
+            if (gifts.Success)
+            {
+                return CleanText(gifts.Value);
+            }
+
             // Some grades show "Grade 2: First Aid Kit" instead of a yield line.
             var grade = Regex.Match(collapsed, @"Grade\s+\d+\s*:\s*([^\n\r]+?)(?=\s+(?:Influence|Cost)|$)", RegexOptions.IgnoreCase);
             if (grade.Success)
@@ -557,6 +629,21 @@ public sealed class MissionOcrPipeline
         return Regex.Replace(value, @"\s+", " ").Trim();
     }
 
+    private static string CleanMissionTitle(string value)
+    {
+        var cleaned = CleanText(value);
+
+        // OCR often prefixes selected SWTOR rows with tiny icon fragments or bullet noise:
+        // "%& Quiet, Please", "|| |e A Line in the Sand". Strip that junk without removing
+        // real mission titles like "2V-R8" companion names elsewhere.
+        cleaned = Regex.Replace(cleaned, @"^[^A-Za-z0-9]+", "").Trim();
+        cleaned = Regex.Replace(cleaned, @"^[a-z]\s+(?=[A-Z])", "", RegexOptions.CultureInvariant).Trim();
+        cleaned = Regex.Replace(cleaned, @"^[a-z]\s+(?=(?:A|An|The|In|On|To|No)\b)", "", RegexOptions.CultureInvariant).Trim();
+        cleaned = Regex.Replace(cleaned, @"^\d+\)?\s+(?=[A-Za-z])", "").Trim();
+        cleaned = cleaned.TrimEnd('.', ',', ';', ':', '-', ' ');
+        return cleaned;
+    }
+
     private static void WriteDebug(string rowText, string companionText, string? missionName, string? companion, TimeSpan? duration)
     {
         var summary = $"OCR ATTEMPT — companion={companion ?? "(null)"}  mission={missionName ?? "(null)"}  duration={(duration?.ToString() ?? "(null)")}\n"
@@ -577,6 +664,151 @@ public sealed class MissionOcrPipeline
         var right = Math.Clamp(rect.Right, x + 1, bitmap.Width);
         var bottom = Math.Clamp(rect.Bottom, y + 1, bitmap.Height);
         return Rectangle.FromLTRB(x, y, right, bottom);
+    }
+
+    private static Rectangle ToBitmapRect(Rectangle screenRect, Point screenshotOrigin)
+    {
+        return new Rectangle(
+            screenRect.X - screenshotOrigin.X,
+            screenRect.Y - screenshotOrigin.Y,
+            screenRect.Width,
+            screenRect.Height);
+    }
+
+    private static MissionsPanelLayout TranslateLayout(MissionsPanelLayout layout, Point offset)
+    {
+        return new MissionsPanelLayout(
+            Offset(layout.DialogRect, offset),
+            Offset(layout.SendCompanionRect, offset),
+            Offset(layout.MissionListRect, offset),
+            Offset(layout.CompanionPanelRect, offset));
+    }
+
+    private static Rectangle Offset(Rectangle rect, Point offset)
+    {
+        return new Rectangle(rect.X + offset.X, rect.Y + offset.Y, rect.Width, rect.Height);
+    }
+
+    private static MissionSendCapture? ParseActiveCrewMissionRow(string ocrText)
+    {
+        if (string.IsNullOrWhiteSpace(ocrText))
+        {
+            return null;
+        }
+
+        var lines = ocrText
+            .Split('\n')
+            .Select(line => CleanText(line))
+            .Where(line => line.Length > 0)
+            .ToList();
+
+        var durationLineIndex = -1;
+        TimeSpan? duration = null;
+        for (var i = 0; i < lines.Count; i++)
+        {
+            duration = ParseDuration(lines[i]);
+            if (duration is not null)
+            {
+                durationLineIndex = i;
+                break;
+            }
+        }
+
+        if (duration is null || durationLineIndex < 0)
+        {
+            return null;
+        }
+
+        var companion = FindActiveCompanion(lines, durationLineIndex);
+        var mission = FindActiveMission(lines, durationLineIndex);
+        if (companion is null || mission is null)
+        {
+            return null;
+        }
+
+        return new MissionSendCapture(
+            companion,
+            mission,
+            duration.Value,
+            null,
+            null,
+            string.Join('\n', lines),
+            companion);
+    }
+
+    private static string? FindActiveCompanion(IReadOnlyList<string> lines, int durationLineIndex)
+    {
+        for (var i = durationLineIndex - 1; i >= 0; i--)
+        {
+            var candidate = CleanActiveCrewLine(lines[i]);
+            if (candidate is null)
+            {
+                continue;
+            }
+
+            var parsed = ParseCompanionName(candidate);
+            if (parsed is not null)
+            {
+                return parsed;
+            }
+        }
+
+        return null;
+    }
+
+    private static string? FindActiveMission(IReadOnlyList<string> lines, int durationLineIndex)
+    {
+        for (var i = durationLineIndex + 1; i <= Math.Min(lines.Count - 1, durationLineIndex + 3); i++)
+        {
+            var candidate = CleanActiveMissionLine(lines[i]);
+            if (candidate is null)
+            {
+                continue;
+            }
+
+            var lower = candidate.ToLowerInvariant();
+            if (lower.Contains("time remaining") || lower.Contains("influence") || lower.Contains("yield"))
+            {
+                continue;
+            }
+
+            if (candidate.Length >= 4 && Regex.IsMatch(candidate, "[A-Za-z]{3,}"))
+            {
+                return candidate;
+            }
+        }
+
+        return null;
+    }
+
+    private static string? CleanActiveCrewLine(string line)
+    {
+        var cleaned = Regex.Replace(line, @"^[^A-Za-z0-9+:-]+", "").Trim();
+        cleaned = Regex.Replace(cleaned, @"\s+", " ");
+        if (cleaned.Length < 3)
+        {
+            return null;
+        }
+
+        var lower = cleaned.ToLowerInvariant();
+        if (lower.Contains("crew skills") || lower is "biochem" or "bioanalysis" or "diplomacy")
+        {
+            return null;
+        }
+
+        return cleaned;
+    }
+
+    private static string? CleanActiveMissionLine(string line)
+    {
+        var cleaned = CleanActiveCrewLine(line);
+        if (cleaned is null)
+        {
+            return null;
+        }
+
+        cleaned = CleanMissionTitle(cleaned);
+        return cleaned.Length >= 3 ? cleaned : null;
     }
 
     private static string? FindTesseract()

@@ -21,7 +21,7 @@ if (-not $SkipPayloadPublish) {
     if (Test-Path $appPublishDir) {
         Get-ChildItem -LiteralPath $appPublishDir -Force | Remove-Item -Recurse -Force
     }
-    dotnet publish $appProject -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -o $appPublishDir
+    dotnet publish $appProject -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:Version=$Version -p:FileVersion=$Version -p:AssemblyVersion=$Version -o $appPublishDir
     if ($LASTEXITCODE -ne 0) {
         throw "App publish failed with exit code $LASTEXITCODE"
     }
@@ -35,7 +35,7 @@ Compress-Archive -Path (Join-Path $appPublishDir "*") -DestinationPath $zipPath 
 if (Test-Path $installerPublishDir) {
     Get-ChildItem -LiteralPath $installerPublishDir -Force | Remove-Item -Recurse -Force
 }
-dotnet publish $installerProject -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:DebugType=none -p:DebugSymbols=false -o $installerPublishDir
+dotnet publish $installerProject -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:Version=$Version -p:FileVersion=$Version -p:AssemblyVersion=$Version -p:DebugType=none -p:DebugSymbols=false -o $installerPublishDir
 if ($LASTEXITCODE -ne 0) {
     throw "Installer publish failed with exit code $LASTEXITCODE"
 }
